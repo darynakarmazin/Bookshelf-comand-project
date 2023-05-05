@@ -1,10 +1,27 @@
-import { fetchBooks } from './fetchBooks.js';
+import { fetchCategories, fetchBooks } from './fetchBooks.js';
 
 const ulBooksList = document.querySelector('.books-list');
 const titleBooksList = document.querySelector('.books-list-title');
 const navList = document.querySelector('.categories-list');
-const listNames = document.querySelectorAll('li');
 const listEmpty = document.querySelector('.books-list-empty');
+
+onRenderFiltred();
+
+function onRenderFiltred() {
+  fetchCategories().then(filtersMarkup).catch();
+}
+
+function filtersMarkup(filtersData) {
+  const filtersMarkup = filtersData
+    .map(filterData => {
+      return `
+      <li data-filter="${filterData.list_name}" class="categories-list-name">${filterData.list_name}</li>`;
+    })
+    .join(' ');
+  navList.innerHTML = `
+      <li data-filter="Best Sellers Books" class="categories-list-name">All categories</li>
+      ${filtersMarkup}`;
+}
 
 navList.addEventListener('click', onFiltred);
 
@@ -30,6 +47,7 @@ function onFiltred(event) {
 }
 
 function removeActiveClass() {
+  const listNames = document.querySelectorAll('.categories-list-name');
   listNames.forEach(elem => {
     elem.classList.remove('acvite');
   });
@@ -55,7 +73,7 @@ function dataMarkup(booksData) {
       <a class="books-list-link" href="">
         <li>
           <img class="books-list-img" src="${bookData.book_image}" width='180px' height='256px' alt="${bookData.title}">
-          <h3 class="books-list-title">${bookData.title}</h3>
+          <h3 class="books-list-name">${bookData.title}</h3>
           <p class="books-list-text">${bookData.author}</p>
           </li>
       </a>`;
