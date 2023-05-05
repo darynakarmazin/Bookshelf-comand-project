@@ -9,7 +9,7 @@ const navList = document.querySelector('.categories-list');
 const listEmpty = document.querySelector('.books-list-empty');
 
 onRenderFiltred();
-
+bestSellersBooks();
 function onRenderFiltred() {
   fetchCategories().then(filtersMarkup).catch();
 }
@@ -33,16 +33,17 @@ function onFiltred(event) {
   if (event.target.tagName !== 'LI') return;
 
   let cateroryName = event.target.dataset['filter'];
+  let cateroryNamePart = cateroryName.split(' ').slice(0, -1).join(' ');
+  let lastWord = cateroryName.split(' ').pop();
 
-  const dataMarkupTitle = `<h2>${cateroryName}</h2>`;
+  const dataMarkupTitle = `<h2>${cateroryNamePart} <span>${lastWord}</span></h2>`;
   titleBooksList.innerHTML = dataMarkupTitle;
 
   removeActiveClass();
   event.target.classList.add('acvite');
 
   if (cateroryName === 'Best Sellers Books') {
-    console.log('place for Best Sellers Books function');
-    ulBooksList.innerHTML = '';
+    bestSellersBooks();
     return;
   }
 
@@ -89,5 +90,12 @@ function dataMarkup(booksData) {
 
 new SimpleBar(document.getElementById('myElement'), {
   autoHide: false,
-  scrollbarMinSize: 167
+  scrollbarMinSize: 167,
 });
+
+function bestSellersBooks() {
+  const dataMarkupTitle = `<h2>Best Sellers <span>Books</span></h2>`;
+  titleBooksList.innerHTML = dataMarkupTitle;
+  console.log('place for Best Sellers Books function');
+  ulBooksList.innerHTML = '';
+};
