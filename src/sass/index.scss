@@ -1,2 +1,17 @@
-@import './common';
-@import './example';
+// @import './common';
+
+// Переменные
+@import './variables';
+
+// Сброс стилей
+@import './base';
+
+// Секции
+@import './header-burger-toggle';
+
+@import './categories';
+@import './support-ukraine';
+@import './best-sellers';
+@import './book-modal';
+@import './shopping-list';
+@import './authorization';
