@@ -1,70 +1,93 @@
-import { fetchBooks, fetchAllBooks } from './fetchBooks.js';
+import { fetchCategories, fetchBooks } from './fetchBooks.js';
+
+import SimpleBar from 'simplebar';
+import 'simplebar/dist/simplebar.css';
 
 const ulBooksList = document.querySelector('.books-list');
-const divBooksList = document.querySelector('.books-list-wrapper');
-const navList = document.querySelector('nav');
-const listNames = document.querySelectorAll('li');
+const titleBooksList = document.querySelector('.books-list-title');
+const navList = document.querySelector('.categories-list');
+const listEmpty = document.querySelector('.books-list-empty');
+
+onRenderFiltred();
+
+function onRenderFiltred() {
+  fetchCategories().then(filtersMarkup).catch();
+}
+
+function filtersMarkup(filtersData) {
+  const filtersMarkup = filtersData
+    .map(filterData => {
+      return `
+      <li data-filter="${filterData.list_name}" class="categories-list-name">${filterData.list_name}</li>`;
+    })
+    .join(' ');
+  navList.innerHTML = `
+      <li data-filter="Best Sellers Books" class="categories-list-name">All categories</li>
+      ${filtersMarkup}`;
+}
 
 navList.addEventListener('click', onFiltred);
-
-// fetchAllBooks().then(dataMarkupAll).catch();
 
 function onFiltred(event) {
   event.preventDefault();
   if (event.target.tagName !== 'LI') return;
 
   let cateroryName = event.target.dataset['filter'];
-  //   console.log(cateroryName);
 
-  listNames.forEach(elem => {
-    elem.classList.remove('acvite');
-  });
+  const dataMarkupTitle = `<h2>${cateroryName}</h2>`;
+  titleBooksList.innerHTML = dataMarkupTitle;
 
+  removeActiveClass();
   event.target.classList.add('acvite');
-  if (cateroryName === 'All') {
-    fetchAllBooks().then(dataMarkupAll).catch();
+
+  if (cateroryName === 'Best Sellers Books') {
+    console.log('place for Best Sellers Books function');
+    ulBooksList.innerHTML = '';
     return;
   }
 
   fetchBooks(cateroryName).then(dataMarkup).catch();
 }
 
+function removeActiveClass() {
+  const listNames = document.querySelectorAll('.categories-list-name');
+  listNames.forEach(elem => {
+    elem.classList.remove('acvite');
+  });
+}
+
 function dataMarkup(booksData) {
+  if (booksData.length === 0) {
+    console.log('Немає інфо');
+
+    const dataMarkup = `
+    <p class="book-list-discription">This page is empty, add some books and proceed to order.</p>
+    <img src="../images/empty-page.png" alt="Empty list image">
+    `;
+    ulBooksList.innerHTML = '';
+    listEmpty.innerHTML = dataMarkup;
+
+    return;
+  }
+
   const dataMarkup = booksData
     .map(bookData => {
       return `
-      <a href="">
-      <li><img src="${bookData.book_image}" width='180px' height='256px' alt="${bookData.title}"><h3>${bookData.title}</h3><p>${bookData.author}</p></li>
-  </a>`;
+      <li>
+        <a class="books-list-link" href="">
+          <img class="books-list-img" src="${bookData.book_image}" alt="${bookData.title}">
+          <div class="content">
+            <h3 class="books-list-name">${bookData.title}</h3>
+            <p class="books-list-text">${bookData.author}</p> 
+          </div>
+        </a>
+      </li>`;
     })
     .join(' ');
   ulBooksList.innerHTML = dataMarkup;
-
-  const dataMarkupTitle = `<h2>${booksData[0].list_name}</h2>`;
-  divBooksList.innerHTML = dataMarkupTitle;
 }
 
-// function dataMarkupAll(data) {
-//   const dataMarkupAll = data
-//     .map(elem => {
-//       console.log(elem);
-//       for (let i = 0; i <= 5; i++)
-//         return `
-//         <li class="caterory"><h2 class="category-title">${elem.list_name}</h2>
-//         <ul class="category-top-books">
-//         <a href=""><li><img src="${elem.books[0].book_image}" width='180px' height='256px' alt="${elem.books[0].title}"><h3>${elem.books[0].title}</h3><p>${elem.books[0].author}</p></li></a>
-//         <a href=""><li><img src="${elem.books[1].book_image}" width='180px' height='256px' alt="${elem.books[1].title}"><h3>${elem.books[1].title}</h3><p>${elem.books[1].author}</p></li></a>
-//         <a href=""><li><img src="${elem.books[2].book_image}" width='180px' height='256px' alt="${elem.books[2].title}"><h3>${elem.books[2].title}</h3><p>${elem.books[2].author}</p></li></a>
-//         <a href=""><li><img src="${elem.books[3].book_image}" width='180px' height='256px' alt="${elem.books[3].title}"><h3>${elem.books[3].title}</h3><p>${elem.books[3].author}</p></li></a>
-//         <a href=""><li><img src="${elem.books[4].book_image}" width='180px' height='256px' alt="${elem.books[4].title}"><h3>${elem.books[4].title}</h3><p>${elem.books[4].author}</p></li></a>
-//         </ul>
-//         <button data-filter="${elem.list_name}" class="list-name list-name-btn">see more</button>
-//         </li>`;
-//     })
-//     .join(' ');
-//   ulBooksList.innerHTML = dataMarkupAll;
-
-//   const dataMarkupTitle = `
-//     <h1>Best Sellers Books</h1>`;
-//   divBooksList.innerHTML = dataMarkupTitle;
-// }
+new SimpleBar(document.getElementById('myElement'), {
+  autoHide: false,
+  scrollbarMinSize: 167
+});
