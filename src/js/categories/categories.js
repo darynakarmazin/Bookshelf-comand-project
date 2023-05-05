@@ -1,5 +1,8 @@
 import { fetchCategories, fetchBooks } from './fetchBooks.js';
 
+import SimpleBar from 'simplebar';
+import 'simplebar/dist/simplebar.css';
+
 const ulBooksList = document.querySelector('.books-list');
 const titleBooksList = document.querySelector('.books-list-title');
 const navList = document.querySelector('.categories-list');
@@ -70,14 +73,21 @@ function dataMarkup(booksData) {
   const dataMarkup = booksData
     .map(bookData => {
       return `
-      <a class="books-list-link" href="">
-        <li>
-          <img class="books-list-img" src="${bookData.book_image}" width='180px' height='256px' alt="${bookData.title}">
-          <h3 class="books-list-name">${bookData.title}</h3>
-          <p class="books-list-text">${bookData.author}</p>
-          </li>
-      </a>`;
+      <li>
+        <a class="books-list-link" href="">
+          <img class="books-list-img" src="${bookData.book_image}" alt="${bookData.title}">
+          <div class="content">
+            <h3 class="books-list-name">${bookData.title}</h3>
+            <p class="books-list-text">${bookData.author}</p> 
+          </div>
+        </a>
+      </li>`;
     })
     .join(' ');
   ulBooksList.innerHTML = dataMarkup;
 }
+
+new SimpleBar(document.getElementById('myElement'), {
+  autoHide: false,
+  scrollbarMinSize: 167
+});

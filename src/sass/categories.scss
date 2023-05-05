@@ -7,6 +7,8 @@
 
 .categories-list-nav {
   flex: 0 0 calc(358 / 1392 * 100%);
+  height: 472px;
+  overflow-y: scroll;
 }
 
 .caterories-content {
@@ -53,29 +55,35 @@
   flex-wrap: wrap;
   row-gap: 40px;
   column-gap: 24px;
+}
+.books-list li {
+  overflow: hidden;
   flex-basis: 180px;
 }
 
-.books-list-link {
-  overflow: hidden;
-  flex-basis: 180px;
+.books-list .content {
+  padding: 14px 0 0 0;
 }
+
 .books-list-img {
-  overflow: hidden;
   border-radius: 16px;
+  width: 180px;
+  height: 256px;
 }
+
 .books-list-name {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 
-  flex-basis: 180px;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.12;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: #111111;
+
+  padding-bottom: 4px;
 }
 
 .books-list-text {
@@ -92,4 +100,9 @@
   text-align: center;
   letter-spacing: -0.02em;
   color: rgba(0, 0, 0, 0.6);
+}
+
+.simplebar-scrollbar {
+  opacity: 0.5;
+  cursor: pointer;
 }
