@@ -1,5 +1,5 @@
 .categories-container {
-  font-family: 'DM Sans', sans-serif;
+  font-family: inherit;
   padding-top: 40px;
   padding-bottom: 80px;
   display: flex;
@@ -35,7 +35,7 @@
 .categories-list-name.active {
   font-weight: 700;
   text-transform: uppercase;
-  color: #4f2ee8;
+  color: var(--purple-color);
 }
 
 .books-list-title h2 {
@@ -44,11 +44,11 @@
   font-size: 32px;
   line-height: 1.19;
   letter-spacing: -0.04em;
-  color: #111111;
+  color: var(--black-color);
 }
 
 .books-list-title h2 span {
-  color: #4f2ee8;
+  color: var(--purple-color);
 }
 
 .books-list {
@@ -83,7 +83,7 @@
   line-height: 1.12;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #111111;
+  color: var(--black-color);
 
   padding-bottom: 4px;
 }
