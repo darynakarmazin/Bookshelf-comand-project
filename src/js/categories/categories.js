@@ -76,7 +76,12 @@ function dataMarkup(booksData) {
       return `
       <li>
         <a class="books-list-link" href="">
+        <div class="thumb">
           <img class="books-list-img" src="${bookData.book_image}" alt="${bookData.title}">
+          <div class="actions-card">
+            <p class="discription">quick view</p>
+          </div>
+        </div>
           <div class="content">
             <h3 class="books-list-name">${bookData.title}</h3>
             <p class="books-list-text">${bookData.author}</p> 
