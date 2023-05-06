@@ -22,7 +22,7 @@ function filtersMarkup(filtersData) {
     })
     .join(' ');
   navList.innerHTML = `
-      <li data-filter="Best Sellers Books" class="categories-list-name">All categories</li>
+      <li data-filter="Best Sellers Books" class="categories-list-name active">All categories</li>
       ${filtersMarkup}`;
 }
 
@@ -40,7 +40,7 @@ function onFiltred(event) {
   titleBooksList.innerHTML = dataMarkupTitle;
 
   removeActiveClass();
-  event.target.classList.add('acvite');
+  event.target.classList.add('active');
 
   if (cateroryName === 'Best Sellers Books') {
     bestSellersBooks();
@@ -53,7 +53,7 @@ function onFiltred(event) {
 function removeActiveClass() {
   const listNames = document.querySelectorAll('.categories-list-name');
   listNames.forEach(elem => {
-    elem.classList.remove('acvite');
+    elem.classList.remove('active');
   });
 }
 
