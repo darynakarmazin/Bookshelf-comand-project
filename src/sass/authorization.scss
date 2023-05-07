@@ -78,6 +78,11 @@
     border-radius: 18px;
 }
 
+.dark .authorization_modal{
+background-color: var(--grey-color);
+border: 2px solid var(--body-bg-color);
+}
+
 .authorization_icon_close {
     display: block;
 stroke: var(--black-color);
@@ -90,6 +95,10 @@ stroke: var(--black-color);
     }
 
      transition:stroke var(--body-bg-color);
+}
+
+.dark .authorization_icon_close{
+    stroke: var(--body-bg-color);
 }
 
 .authorization_button_close {
@@ -188,7 +197,10 @@ stroke: var(--black-color);
     display: block;
 
 }
-
+.dark .authorization_input{
+    color: var(--body-bg-color);
+    border: 2px solid var(--body-bg-color);
+}
 .authorization_label {
     position: absolute;
 
@@ -222,7 +234,9 @@ stroke: var(--black-color);
 
     transition: 300ms;
 }
-
+.dark .authorization_label{
+    color: var(--body-bg-color);
+}
 .authorization_input:not(:placeholder-shown)+.authorization_label,
 .authorization_input:focus+.authorization_label {
     top: -16%;
@@ -295,7 +309,9 @@ stroke: var(--black-color);
         right: 32;
     }
 }
-
+.dark .authorization_icon{
+    stroke: var(--body-bg-color);
+}
 .authorization_button_submit {
     cursor: pointer;
 
@@ -344,7 +360,10 @@ stroke: var(--black-color);
         color: var(--white-color);
     }
 }
-
+.dark .authorization_button_submit{
+    color: var(--black-color);;
+        background:  var(--body-bg-color);
+}
 .authorization_link_block {
     text-align: center;
 }
@@ -388,9 +407,12 @@ stroke: var(--black-color);
 }
 
 .desactive-link {
-    color: var(--black-color);
+    color: rgba(17, 17, 17, 0.5);
 }
 
+.dark .desactive-link{
+    color: rgba(246, 246, 246, 0.5);
+}
 .authorization_link:nth-child(1) {
     margin-right: 7px;
 
@@ -435,3 +457,6 @@ stroke: var(--black-color);
     letter-spacing: -0.04em;
     color: var(--white-color);
 }
+
+
+
