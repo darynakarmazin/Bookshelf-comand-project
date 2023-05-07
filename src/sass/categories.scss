@@ -7,6 +7,10 @@
   gap: 40px;
 }
 
+.dark .categories-container {
+  background: #202024;
+}
+
 .categories-list-nav {
   max-width: 335px;
   height: 228px;
@@ -32,10 +36,18 @@
   color: rgba(17, 17, 17, 0.6);
 }
 
+.dark .categories-list-name {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .categories-list-name.active {
   font-weight: 700;
   text-transform: uppercase;
   color: var(--purple-color);
+}
+
+.dark .categories-list-name.active {
+  color: var(--gold-color);
 }
 
 .books-list-title h2 {
@@ -45,6 +57,10 @@
   line-height: 1.19;
   letter-spacing: -0.04em;
   color: var(--black-color);
+}
+
+.dark .books-list-title h2 {
+  color: var(--white-color);
 }
 
 .books-list-title h2 span {
@@ -86,6 +102,10 @@
   color: var(--black-color);
 
   padding-bottom: 4px;
+}
+
+.dark .books-list-name {
+  color: var(--white-color);
 }
 
 .books-list-text {
