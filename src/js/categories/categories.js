@@ -6,6 +6,7 @@ import SimpleBar from 'simplebar';
 import 'simplebar/dist/simplebar.css';
 
 const ulBooksList = document.querySelector('.books-list');
+const ulBooksListTop = document.querySelector('.books-list-top');
 const titleBooksList = document.querySelector('.books-list-title');
 const navList = document.querySelector('.categories-list');
 const listEmpty = document.querySelector('.books-list-empty');
@@ -62,6 +63,7 @@ function removeActiveClass() {
 }
 
 function dataMarkup(booksData) {
+  ulBooksListTop.innerHTML = '';
   if (booksData.length === 0) {
     console.log('Немає інфо');
 
