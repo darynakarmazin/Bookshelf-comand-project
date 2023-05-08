@@ -1,3 +1,4 @@
+import './js/loader';
 import './js/header/header-burger';
 
 import './js/categories/categories';
