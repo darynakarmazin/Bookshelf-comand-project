@@ -1,71 +1,117 @@
 <!-- authorization modal -->
 <div class="authorization_backdrop is-hidden" data-modal>
-    <div class="box"></div>
-    <div class="authorization_modal">
-         <button class="authorization_button_close" data-modal-close>
-            <svg class="authorization_icon_close" aria-label="close modal window">
-                <use href="./images/icons.svg#close-button"></use>
-            </svg>
-        </button>
-    
+  <div class="box"></div>
+  <div class="authorization_modal">
+    <button class="authorization_button_close" data-modal-close>
+      <svg class="authorization_icon_close" aria-label="close modal window">
+        <use href="./images/icons.svg#close-button"></use>
+      </svg>
+    </button>
 
-        <!-- form sign in -->
-        <form class="authorization_form display-form" id="sign-in">
-             <div class="authorization_field">
-                <input type="email" name="email" class="authorization_input" id="user_email_in" required placeholder="&#32;" />
-                <label class="authorization_label" for="user_email_in">email</label>
-                <svg class="authorization_icon">
-                    <use href="./images/icons.svg#mail"></use>
-                </svg>
-            </div>
-        
-            <div class="authorization_field">
-                <input type="password" name="password" class="authorization_input" id="user_password_in" required
-                    placeholder="&#32;" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
-                    title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." />
-                <label class="authorization_label" for="user_password_in">password </label>
-                <svg class="authorization_icon">
-                    <use href="./images/icons.svg#pass"></use>
-                </svg>
-            </div>
-            <button type="submit" class="authorization_button_submit">Sign in</button>
-        </form>
-        
-        <!-- form sign up -->
-        
-        <form class="authorization_form" id="sign-up">
-            <div class="authorization_field">
-                <input type="text" name="name" class="authorization_input" id="user_name" required placeholder="&#32;"
-                    autocomplete="off" />
-                <label class="authorization_label" for="user_name">name</label>
-            </div>
-        
-            <div class="authorization_field">
-                <input type="email" name="email" class="authorization_input" id="user_email_up" required placeholder="&#32;" />
-                <label class="authorization_label" for="user_email_up">email</label>
-                <svg class="authorization_icon">
-                    <use href="./images/icons.svg#mail"></use>
-                </svg>
-            </div>
-        
-            <div class="authorization_field">
-                <input type="password" name="password" class="authorization_input" id="user_password_up" required
-                    placeholder="&#32;" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
-                    title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." />
-                <label class="authorization_label" for="user_password_up">password </label>
-                <svg class="authorization_icon">
-                    <use href="./images/icons.svg#pass"></use>
-                </svg>
-            </div>
-            <button type="submit" class="authorization_button_submit">Sign up</button>
-        </form>
-        <div class="authorization_link_block">
-            <button type="button" class="authorization_link active-link" data-action="sign-up">
-                sign up
-            </button>
-            <button type="button" class="authorization_link desactive-link" data-action="sign-in">
-                sign in
-            </button>
-        </div>
+    <!-- form sign in -->
+    <form class="authorization_form display-form" id="sign-in">
+      <div class="authorization_field">
+        <input
+          type="email"
+          name="email"
+          class="authorization_input"
+          id="user_email_in"
+          required
+          placeholder="&#32;"
+        />
+        <label class="authorization_label" for="user_email_in">email</label>
+        <svg class="authorization_icon">
+          <use href="./images/icons.svg#mail"></use>
+        </svg>
+      </div>
+
+      <div class="authorization_field">
+        <input
+          type="password"
+          name="password"
+          class="authorization_input"
+          id="user_password_in"
+          required
+          placeholder="&#32;"
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+          title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number."
+        />
+        <label class="authorization_label" for="user_password_in"
+          >password
+        </label>
+        <svg class="authorization_icon">
+          <use href="./images/icons.svg#pass"></use>
+        </svg>
+      </div>
+      <button type="submit" class="authorization_button_submit">Sign in</button>
+    </form>
+
+    <!-- form sign up -->
+
+    <form class="authorization_form" id="sign-up">
+      <div class="authorization_field">
+        <input
+          type="text"
+          name="name"
+          class="authorization_input"
+          id="user_name"
+          required
+          placeholder="&#32;"
+          autocomplete="off"
+        />
+        <label class="authorization_label" for="user_name">name</label>
+      </div>
+
+      <div class="authorization_field">
+        <input
+          type="email"
+          name="email"
+          class="authorization_input"
+          id="user_email_up"
+          required
+          placeholder="&#32;"
+        />
+        <label class="authorization_label" for="user_email_up">email</label>
+        <svg class="authorization_icon">
+          <use href="./images/icons.svg#mail"></use>
+        </svg>
+      </div>
+
+      <div class="authorization_field">
+        <input
+          type="password"
+          name="password"
+          class="authorization_input"
+          id="user_password_up"
+          required
+          placeholder="&#32;"
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+          title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number."
+        />
+        <label class="authorization_label" for="user_password_up"
+          >password
+        </label>
+        <svg class="authorization_icon">
+          <use href="./images/icons.svg#pass"></use>
+        </svg>
+      </div>
+      <button type="submit" class="authorization_button_submit">Sign up</button>
+    </form>
+    <div class="authorization_link_block">
+      <button
+        type="button"
+        class="authorization_link active-link"
+        data-action="sign-up"
+      >
+        sign up
+      </button>
+      <button
+        type="button"
+        class="authorization_link desactive-link"
+        data-action="sign-in"
+      >
+        sign in
+      </button>
     </div>
+  </div>
 </div>
