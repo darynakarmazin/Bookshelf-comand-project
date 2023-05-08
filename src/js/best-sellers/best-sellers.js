@@ -17,7 +17,7 @@ function dataBestsellers(data) {
   const dataBestsellers = data
     .map(elem => {
       return `
-  <li class="caterory"><h2 class="category-title">${elem.list_name}</h2>
+  <li><h2 class="books-list-title">${elem.list_name}</h2>
     <ul class="category-top-books">
       <li>
         <a class="books-list-link" href="">
@@ -90,8 +90,12 @@ function dataBestsellers(data) {
         </a>
       </li>
       </ul>
+      <div class="top-btn-wrapper">
         <button data-filter="${elem.list_name}" class="list-name best-sellers-btn">see more</button>
-        </li>`;
+        </div>
+        </li>
+        `
+        ;
     })
     .join(' ');
   ulBooksListTop.innerHTML = dataBestsellers;
