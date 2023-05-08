@@ -20,7 +20,7 @@ function dataBestsellers(data) {
       <li>
         <a class="books-list-link" href="">
         <div class="thumb">
-          <img class="books-list-img" src="${elem.books[0].book_image}" alt="${elem.books[0].title}">
+          <img class="books-list-img" data-id="${elem.books[0]._id}" src="${elem.books[0].book_image}" alt="${elem.books[0].title}">
           <div class="actions-card">
             <p class="discription">quick view</p>
           </div>
