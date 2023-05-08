@@ -2,6 +2,7 @@ import { fetchTopBooks } from './fetchTopBooks';
 import { onFiltred } from '../categories/categories';
 import { offLoader, onLoader } from '../loader.js';
 
+const ulBooksListTop = document.querySelector('.books-list-top');
 const ulBooksList = document.querySelector('.books-list');
 const divBooksList = document.querySelector('.books-list-title');
 
@@ -12,6 +13,7 @@ export function onRenderBestsellers() {
 }
 
 function dataBestsellers(data) {
+  ulBooksList.innerHTML = '';
   const dataBestsellers = data
     .map(elem => {
       return `
@@ -87,11 +89,12 @@ function dataBestsellers(data) {
           </div>
         </a>
       </li>
+      </ul>
         <button data-filter="${elem.list_name}" class="list-name best-sellers-btn">see more</button>
         </li>`;
     })
     .join(' ');
-  ulBooksList.innerHTML = dataBestsellers;
+  ulBooksListTop.innerHTML = dataBestsellers;
 
   const dataMarkupTitle = `<h2>Best Sellers <span>Books</span></h2>`;
   divBooksList.innerHTML = dataMarkupTitle;
