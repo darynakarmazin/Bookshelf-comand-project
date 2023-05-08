@@ -1,11 +1,11 @@
 .mask {
   width: 100%;
   height: 100%;
-  background-color: #ffffffea;
+  background-color: #fffffff5;
   position: fixed;
   top: 0;
   z-index: 100;
-  transition: all 6000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 1000ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   justify-content: center;
   align-items: center;

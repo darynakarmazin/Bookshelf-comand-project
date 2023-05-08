@@ -1,12 +1,13 @@
 import { fetchTopBooks } from './fetchTopBooks';
 import { onFiltred } from '../categories/categories';
+import { offLoader, onLoader } from '../loader.js';
 
 const ulBooksList = document.querySelector('.books-list');
 const divBooksList = document.querySelector('.books-list-title');
 
 onRenderBestsellers();
-
 export function onRenderBestsellers() {
+  onLoader();
   fetchTopBooks().then(dataBestsellers).catch();
 }
 
@@ -95,10 +96,11 @@ function dataBestsellers(data) {
   const dataMarkupTitle = `<h2>Best Sellers <span>Books</span></h2>`;
   divBooksList.innerHTML = dataMarkupTitle;
 
-  oncategorriesBtn();
+  onCategorriesBtn();
+  offLoader();
 }
 
-function oncategorriesBtn() {
+function onCategorriesBtn() {
   const categorriesBtn = document.querySelectorAll('.best-sellers-btn');
   categorriesBtn.forEach(element =>
     element.addEventListener('click', onFiltred)
