@@ -1,4 +1,5 @@
 import { fetchCategories, fetchBooks } from './fetchBooks.js';
+import { onRenderBestsellers } from '../best-sellers/best-sellers.js';
 
 import SimpleBar from 'simplebar';
 import 'simplebar/dist/simplebar.css';
@@ -9,7 +10,7 @@ const navList = document.querySelector('.categories-list');
 const listEmpty = document.querySelector('.books-list-empty');
 
 onRenderFiltred();
-bestSellersBooks();
+
 function onRenderFiltred() {
   fetchCategories().then(filtersMarkup).catch();
 }
@@ -28,9 +29,9 @@ function filtersMarkup(filtersData) {
 
 navList.addEventListener('click', onFiltred);
 
-function onFiltred(event) {
+export function onFiltred(event) {
   event.preventDefault();
-  if (event.target.tagName !== 'LI') return;
+  if (event.target.tagName !== 'LI' && event.target.tagName !== 'BUTTON') return;
 
   let cateroryName = event.target.dataset['filter'];
   let cateroryNamePart = cateroryName.split(' ').slice(0, -1).join(' ');
@@ -43,7 +44,7 @@ function onFiltred(event) {
   event.target.classList.add('active');
 
   if (cateroryName === 'Best Sellers Books') {
-    bestSellersBooks();
+    onRenderBestsellers();
     return;
   }
 
@@ -97,10 +98,3 @@ new SimpleBar(document.getElementById('myElement'), {
   autoHide: false,
   scrollbarMinSize: 167,
 });
-
-function bestSellersBooks() {
-  const dataMarkupTitle = `<h2>Best Sellers <span>Books</span></h2>`;
-  titleBooksList.innerHTML = dataMarkupTitle;
-  console.log('place for Best Sellers Books function');
-  ulBooksList.innerHTML = '';
-};
