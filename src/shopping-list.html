@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+    <script type="module" src="./js/shopping-list/shopping-list.js "></script>
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <!-- <include src="./partials/loader.html"></include> -->
+    <include src="./partials/header-burger-toggle.html"></include>
+
+    <main>
+      <div class="shoppingList-container">
+        <div class="shoppingList-suppot">
+          <include src="./partials/support-ukraine.html"></include>
+        </div>
+        <div class="shoppingList-box">
+          <h1 class="shoppingList-title">Shopping <span>List</span></h1>
+
+          <!-- ------------------------------ -->
+          <div class="marcup-shoppingList">
+            <ul class="books-shoppingList">
+              <li>
+                <img
+                  class="books-shoppingList-img"
+                  src="./images/empty-page.png"
+                  alt="Book"
+                />
+                <div class="box-shoppingList-content">
+                  <div class="box-shoppingList">
+                    <div>
+                      <h2 class="text-shoppingList-title">qqqqqq</h2>
+                      <p class="text-shoppingList-category">wwwww</p>
+                    </div>
+                    <button class="box-shoppingList-trash">
+                      <svg class="box-shoppingList-trash-icon">
+                        <use
+                          href="./images/shopping-list-icon.svg#icon-trash"
+                        ></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <p class="text-shoppingList-content">
+                    asasasahjjhfgjfj jfjfujf yfjyf sasasasaa sasasa asas
+                  </p>
+                  <div class="box-shoppingList-link">
+                    <p class="text-shoppingList-author">dfsdfsfdf</p>
+                    <ul class="box-shoppingList-shop">
+                      <li>
+                        <a
+                          class="shop-shoppingList-link"
+                          href="https://www.amazon.com/books-used-books-textbooks/b/?ie=UTF8&node=283155&ref_=topnav_storetab_b"
+                        >
+                          <svg class="shop-shoppingList-img1">
+                            <use
+                              href="./images/shopping-list-icon.svg#icon-shop1"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="shop-shoppingList-link"
+                          href="https://www.google.com/"
+                        >
+                          <svg class="shop-shoppingList-img2">
+                            <use
+                              href="./images/shopping-list-icon.svg#icon-shop2"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="shop-shoppingList-link"
+                          href="https://www.google.com/"
+                        >
+                          <svg class="shop-shoppingList-img2">
+                            <use
+                              href="./images/shopping-list-icon.svg#icon-shop3"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- <p class="shoppingList-text">
+            This page is empty, add some books and proceed to order.
+          </p>
+          <a href="./index.html">
+            <picture>
+              <source srcset="./images/empty-page@2.png 2x" type="image/jpeg" />
+              <img
+                class="shoppingList-img"
+                src="./images/empty-page.png"
+                alt="Book"
+              />
+            </picture>
+          </a> -->
+        </div>
+      </div>
+    </main>
+    <!-- <script type="module" src="./js/shopping-list/shopping-list.js "></script> -->
+  </body>
+</html>
