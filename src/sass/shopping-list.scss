@@ -1,6 +1,7 @@
 .shoppingList-container {
   display: flex;
   gap: 40px;
+  margin-top: 40px;
 }
 
 .shoppingList-box {
@@ -78,7 +79,7 @@
   gap: 20px;
 }
 
-.books-shoppingList > li {
+.books-shoppingListLi {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
