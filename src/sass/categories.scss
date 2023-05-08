@@ -5,10 +5,17 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  align-items: center;
 }
 
 .dark .categories-container {
   background: #202024;
+}
+
+.categories-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .categories-list-nav {
@@ -71,6 +78,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   row-gap: 40px;
   column-gap: 24px;
 }
@@ -172,6 +181,11 @@
   .categories-container {
     padding-bottom: 100px;
   }
+  .categories-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
   .categories-list-nav {
     max-width: 337px;
     height: 472px;
@@ -204,6 +218,12 @@
 @media screen and (min-width: 1400px) {
   .categories-container {
     flex-direction: row;
+    align-items: flex-start;
+  }
+  .categories-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
   .categories-list-nav {
     flex: 0 0 calc(358 / 1392 * 100%);
