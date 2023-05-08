@@ -31,7 +31,8 @@ navList.addEventListener('click', onFiltred);
 
 export function onFiltred(event) {
   event.preventDefault();
-  if (event.target.tagName !== 'LI' && event.target.tagName !== 'BUTTON') return;
+  if (event.target.tagName !== 'LI' && event.target.tagName !== 'BUTTON')
+    return;
 
   let cateroryName = event.target.dataset['filter'];
   let cateroryNamePart = cateroryName.split(' ').slice(0, -1).join(' ');
