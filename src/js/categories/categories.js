@@ -1,5 +1,6 @@
 import { fetchCategories, fetchBooks } from './fetchBooks.js';
 import { onRenderBestsellers } from '../best-sellers/best-sellers.js';
+import { offLoader, onLoader } from '../loader.js';
 
 import SimpleBar from 'simplebar';
 import 'simplebar/dist/simplebar.css';
@@ -31,6 +32,7 @@ navList.addEventListener('click', onFiltred);
 
 export function onFiltred(event) {
   event.preventDefault();
+  onLoader();
   if (event.target.tagName !== 'LI' && event.target.tagName !== 'BUTTON')
     return;
 
@@ -93,6 +95,7 @@ function dataMarkup(booksData) {
     })
     .join(' ');
   ulBooksList.innerHTML = dataMarkup;
+  offLoader();
 }
 
 new SimpleBar(document.getElementById('myElement'), {
