@@ -55,6 +55,7 @@
           name="name"
           class="authorization_input"
           id="user_name"
+          minlength="2"
           required
           placeholder="&#32;"
           autocomplete="off"
@@ -85,7 +86,7 @@
           id="user_password_up"
           required
           placeholder="&#32;"
-          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}"
           title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number."
         />
         <label class="authorization_label" for="user_password_up"
