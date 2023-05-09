@@ -126,7 +126,9 @@
   border: 2px solid var(--purple-color);
   border-radius: 40px;
   background-color: transparent;
+  display: flex;
   margin-top: 32px;
+  margin-left: auto;
 }
 @media screen and (min-width: 768px) {
   .categories-container {
