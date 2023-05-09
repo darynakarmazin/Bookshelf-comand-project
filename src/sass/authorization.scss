@@ -8,7 +8,7 @@
   width: 100%;
   height: 100%;
 
-  background-color: var(--purple-color);
+  background-color: #4f2ee8;
 
   transform: translateY(0);
   transition: var(--animation);
@@ -354,7 +354,7 @@
 
   &:hover,
   &:focus {
-    background-color: var(--purple-color);
+    background-color: #4f2ee8;
     color: var(--white-color);
   }
 }
@@ -394,12 +394,12 @@
 
   &:hover,
   &:focus {
-    color: var(--purple-color);
+    color: #4f2ee8;
   }
 }
 
 .active-link {
-  color: var(--purple-color);
+  color: #4f2ee8;
 
   text-decoration-line: underline;
 }
