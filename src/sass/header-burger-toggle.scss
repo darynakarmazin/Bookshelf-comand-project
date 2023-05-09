@@ -161,6 +161,20 @@ input[type='checkbox']:checked ~ .check::after {
   transform: translateY(0);
 }
 
+.burger-container {
+  background-image: url(../images/background-colors.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .burger-container {
+    background-image: url(../images/background-colors_x2.png);
+  }
+}
+
 .mobile-menu__header {
   background-color: var(--white-color);
   border: 1.5px solid var(--black-color);
@@ -276,7 +290,7 @@ input[type='checkbox']:checked ~ .check::after {
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1440px) {
   .navigation {
     margin-right: 745px;
   }
