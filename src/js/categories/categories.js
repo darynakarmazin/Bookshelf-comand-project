@@ -33,7 +33,7 @@ navList.addEventListener('click', onFiltred);
 
 export function onFiltred(event) {
   event.preventDefault();
-  onLoader();
+
   if (event.target.tagName !== 'LI' && event.target.tagName !== 'BUTTON')
     return;
 
@@ -51,7 +51,7 @@ export function onFiltred(event) {
     onRenderBestsellers();
     return;
   }
-
+  onLoader();
   fetchBooks(cateroryName).then(dataMarkup).catch();
 }
 
