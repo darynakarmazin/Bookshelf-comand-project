@@ -40,7 +40,7 @@
   font-size: 16px;
   line-height: 1.12;
   letter-spacing: -0.02em;
-  color: rgba(17, 17, 17, 0.6);
+  color: var(--categories-list-color);
 }
 
 .dark .categories-list-name {
@@ -71,7 +71,7 @@
 }
 
 .books-list-title h2 span {
-  color: var(--purple-color);
+  color: #4f2ee8;
 }
 
 .books-list {
