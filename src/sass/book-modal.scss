@@ -24,7 +24,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background: rgba(17, 17, 17, 0.4);
     display: none;
   }
   
@@ -35,13 +35,14 @@
   }
   
   .modal-content {
-    background-color: #fff;
+    background: #FFFFFF;
+    border: 2px solid #111111;
+    border-radius: 18px;
     padding: 20px;
-    border-radius: 5px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     max-width: 800px;
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 762px;
     overflow-y: auto;
     position: relative;
   }
@@ -55,4 +56,101 @@
     cursor: pointer;
   }
   
+  .book-title{
+    color: black;
+  }
+
+  // style in modal
+  .book-title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.16;
+    color: #111111;
+    margin-top: 14px;
+    margin-left: 4px;
+  }
   
+  .book-author{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28;
+    color: #B4AFAF;
+    margin-top: 14px;
+    margin-left: 4px;
+    margin-bottom: 18px;
+  }
+
+  .book-description{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.28;
+    letter-spacing: -0.04em;
+    max-width: 280px;
+    margin: 0;
+    margin-bottom: 22px;
+    margin-left: 4px;
+  }
+
+  .book-cover{
+    // width: 100%;
+    width: 100%;
+    height: 408px;
+    border-radius: 8px;
+    margin: 0 auto;
+  }
+
+  .book-cover-container{
+    // margin: 0 auto;
+    // width: 100%;
+    padding: 0;
+    width: 100%;
+  }
+
+  .modal-content{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .photo-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* TABLET */
+@media screen and (min-width: 768px) {
+  .modal-content{
+    width: 579px;
+    height: 465px;
+  }
+  .book-cover{
+    width: 192px;
+    height: 281px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
+  .book-title{
+    margin-top: 0;
+    margin-left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .book-description{
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .book-author{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1400px) {
+}
