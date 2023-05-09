@@ -1,3 +1,6 @@
+.block-title-support-ukraine {
+  // height: 32px;
+}
 .title-support-ukraine {
   display: flex;
   margin-bottom: 40px;
@@ -5,6 +8,7 @@
   font-size: 28px;
   line-height: 32px;
   letter-spacing: -0.04em;
+  height: 32px;
 }
 .title-icon-support-ukraine {
   margin-left: 12px;
@@ -12,13 +16,13 @@
 .section-support-ukraine {
   width: 255px;
   padding: 24px 40px 20px;
-  background-color: var(--purple-color);
+  background-color: #4f2ee8;
   background: linear-gradient(
     180deg,
     rgba(79, 46, 232, 1) 0%,
     rgba(255, 255, 255, 1) 130%
   );
-  color: var(--white-color);
+  color: white;
   border-radius: 16px;
 }
 .logo-support-ukraine {
@@ -28,6 +32,9 @@
   height: 32px;
   width: 159px;
   margin-bottom: 20px;
+}
+.logo-support-ukraine:last-child {
+  margin-bottom: 16px;
 }
 :hover.logo-support-ukraine {
   -webkit-filter: hue-rotate(360deg);
@@ -39,6 +46,9 @@
   width: 149px;
   height: 32px;
 }
+.logo-support-ukraine a img {
+  height: 32px;
+}
 .section-button-support-ukraine {
   text-align: center;
 }
@@ -47,12 +57,18 @@
   height: 32px;
   border-radius: 50%;
   /* transform: rotate(180deg); */
-  fill: var(--purple-color);
-  background-color: var(--white-color);
-  border: 0 none var(--white-color);
+  fill: #4f2ee8;
+  background-color: white;
+  border: 0 none white;
+}
+:hover.button-support-ukraine {
+  fill: white;
+  background-color: #4f2ee8;
 }
 .button-icon-support-ukraine {
-  padding: 7px 3px 5px;
+  text-align: center;
+  width: 12px;
+  height: 6px;
 }
 @media screen and (min-width: 768px) {
   .section-button-support-ukraine {
@@ -61,11 +77,23 @@
   .section-support-ukraine {
     padding-bottom: 14px;
   }
+  .button-support-ukraine {
+    width: 38px;
+    height: 38px;
+  }
+  .button-icon-support-ukraine {
+    text-align: center;
+    width: 13px;
+    height: 7px;
+  }
+  .logo-support-ukraine:last-child {
+    margin-bottom: 0px;
+  }
 }
 @media screen and (min-width: 1440px) {
   .section-support-ukraine {
     width: 276px;
-    padding-bottom: 20px;
+    padding-bottom: 24px;
   }
   .section-button-support-ukraine {
     margin-top: 40px;
