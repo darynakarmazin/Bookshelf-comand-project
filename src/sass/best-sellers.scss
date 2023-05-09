@@ -19,7 +19,6 @@
   align-items: center;
   justify-content: center;
   row-gap: 40px;
-  column-gap: 24px;
 }
 .category-top-books li {
   overflow: hidden;
@@ -157,6 +156,9 @@
   .books-list-title h2 {
     font-size: 48px;
     line-height: 1.08;
+  }
+  .category-top-books {
+    justify-content: space-around;
   }
   .category-top-books li {
     flex-basis: calc((100% - 2 * 25px) / 3);
