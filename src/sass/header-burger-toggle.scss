@@ -37,9 +37,22 @@
 }
 
 .site-nav__item_active {
-  background-color: var(--gold-color);
+  background-color: #eac645;
   border-radius: 36px;
   padding: 8px 16px;
+}
+
+.site-nav__link_active {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+
+  color: #111111;
 }
 
 .site-nav__link {
@@ -58,6 +71,7 @@
 .site-nav__logo {
   width: 20px;
   height: 20px;
+  fill: var(--black-color);
 
   margin-left: 4px;
 }
@@ -70,7 +84,7 @@
 }
 
 input[type='checkbox'] {
-  -webkit-appearance: none;
+  display: none;
 }
 
 .check {
@@ -118,7 +132,7 @@ input[type='checkbox']:checked ~ .check::after {
   font-size: 14px;
   line-height: calc(18 / 14);
   letter-spacing: -0.04em;
-  color: var(--white-color);
+  color: #ffffff;
 }
 
 .burger-menu {
@@ -131,11 +145,12 @@ input[type='checkbox']:checked ~ .check::after {
 .burger-menu__icon {
   width: 28px;
   height: 28px;
+  fill: var(--black-color);
   transition: fill var(--animation);
 }
 
 .burger-menu__icon:hover {
-  fill: var(--purple-color);
+  fill: #4f2ee8;
 }
 
 // Burger-Modal
@@ -196,11 +211,12 @@ input[type='checkbox']:checked ~ .check::after {
 .mobile-menu__icon {
   width: 28px;
   height: 28px;
+  fill: var(--black-color);
   transition: fill var(--animation);
 }
 
 .mobile-menu__icon:hover {
-  fill: var(--purple-color);
+  fill: #4f2ee8;
 }
 
 .sign-up-button-burger {
@@ -211,8 +227,8 @@ input[type='checkbox']:checked ~ .check::after {
   padding: 13px 14px;
   margin-top: 20px;
 
-  background: var(--purple-color);
-  border: 1.5px solid var(--black-color);
+  background: #4f2ee8;
+  border: 1.5px solid #111111;
   border-radius: 18px;
   cursor: pointer;
 }
@@ -231,8 +247,8 @@ input[type='checkbox']:checked ~ .check::after {
   margin-top: 428px;
   margin-bottom: 20px;
 
-  background-color: var(--white-color);
-  border: 1.5px solid var(--black-color);
+  background-color: #ffffff;
+  border: 1.5px solid #111111;
   border-radius: 18px;
   cursor: pointer;
 }
@@ -245,7 +261,7 @@ input[type='checkbox']:checked ~ .check::after {
   line-height: 1.28;
   letter-spacing: -0.04em;
 
-  color: var(--black-color);
+  color: #111111;
 }
 
 .log-out-button_icon {
@@ -279,8 +295,8 @@ input[type='checkbox']:checked ~ .check::after {
     min-width: 184px;
     padding: 13px 14px;
 
-    background: var(--purple-color);
-    border: 1.5px solid var(--black-color);
+    background: #4f2ee8;
+    border: 1.5px solid #111111;
     border-radius: 18px;
     cursor: pointer;
   }

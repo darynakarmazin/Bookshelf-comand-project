@@ -32,11 +32,25 @@ a {
 
 body {
   font-family: var(--main-font);
+  background-color: var(--body-bg-color);
   margin: 0;
 }
 
 [class$='-container'] {
   margin: 0 auto;
+}
+
+[data-theme='dark'] {
+  --black-color: #ffffff;
+  --grey-color: #202024;
+  --purple-color: #eac645;
+  --gold-color: #4f2ee8;
+  --white-color: #111111;
+  --body-bg-color: #202024;
+  --button-text-color: #111111;
+  --books-title-color: #b4afaf;
+  --categories-list-color: rgba(255, 255, 255, 0.6);
+  --disactive-link-color: rgba(246, 246, 246, 0.5);
 }
 
 /* MOBILE */
