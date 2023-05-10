@@ -1,15 +1,14 @@
 import { fetchTopBooks } from './fetchTopBooks';
 import { onFiltred } from '../categories/categories';
 import { offLoader, onLoader } from '../loader.js';
+import debounce from 'lodash.debounce';
 
 const ulBooksListTop = document.querySelector('.books-list-top');
 const ulBooksList = document.querySelector('.books-list');
 const divBooksList = document.querySelector('.books-list-title');
 let limit = 1;
 
-window.addEventListener('resize', onRenderBestsellers);
-
-
+window.addEventListener('resize', debounce(onRenderBestsellers, 1000));
 
 onRenderBestsellers();
 export function onRenderBestsellers() {
@@ -18,22 +17,21 @@ export function onRenderBestsellers() {
 }
 
 function dataBestsellers(data) {
+  (function () {
+    const vw = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    );
+    if (vw < 768) {
+      limit = 1;
+    } else if (vw < 1440) {
+      limit = 3;
+    } else {
+      limit = 5;
+    }
+  })();
 
-(function () {
-  const vw = Math.max(
-    document.documentElement.clientWidth || 0,
-    window.innerWidth || 0
-  );
-  if (vw < 768) {
-    limit = 1;
-  } else if (vw < 1440) {
-    limit = 3;
-  } else {
-    limit = 5;
-  }
-})();
-
-  console.log(limit);
+  // console.log(limit);
   ulBooksList.innerHTML = '';
   const dataBestsellers = data
     .map(elem => {

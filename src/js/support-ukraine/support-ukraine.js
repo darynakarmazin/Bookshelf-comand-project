@@ -10,7 +10,7 @@ let inc = 2;
     document.documentElement.clientWidth || 0,
     window.innerWidth || 0
   );
-  console.log(vw);
+  // console.log(vw);
   if (vw < 768) {
     limit = 4;
     renderListSupport(array, limit);
