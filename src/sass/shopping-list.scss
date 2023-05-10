@@ -7,7 +7,7 @@
 .shoppingList-box {
   width: 100%;
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1440px) {
   .shoppingList-suppot {
     display: none;
   }
@@ -76,15 +76,15 @@
 
 // ---------------------
 .books-shoppingList {
-  gap: 20px;
+  // gap: 20px;
 }
 
 .books-shoppingListLi {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  margin-bottom: 20px;
   padding: 14px;
-  // background: #111;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
 }
@@ -126,7 +126,7 @@
   line-height: 1.12;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: --black-color;
+  color: var(--black-color);
   margin-bottom: 4px;
 }
 .text-shoppingList-category {
@@ -222,7 +222,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .books-shoppingList > li {
+  .books-shoppingListLi {
     padding: 24px;
   }
   .books-shoppingList-img {
@@ -258,4 +258,50 @@
     width: 32px;
     height: 30px;
   }
+}
+
+// --------pag
+.books-shoppingList-listPage {  
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  white: 100%;
+  margin-bottom: 40px;
+  gap: 8px;
+}
+.books-shoppingList-listPage li {
+  font-family: --main-font;
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 1.2;
+
+  width: 38px;
+  height: 38px;
+  background-color: var(--white-color);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: var(--black-color);
+  cursor: pointer;
+  border: 1px solid #111111;
+  border-radius: 50%;
+
+}
+.books-shoppingList-listPage li:focus,
+.books-shoppingList-listPage li:hover {
+  transform: scale(1.2);
+}
+
+.books-shoppingList-listPage .activeSlp {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+.item {
+  display: flex;
+}
+.itemNone {
+  display: none;
 }

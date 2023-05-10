@@ -11,11 +11,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./js/shopping-list/shopping-list.js "></script>
+    
     <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <!-- <include src="./partials/loader.html"></include> -->
+    <include src="./partials/loader.html"></include>
     <include src="./partials/header-burger-toggle.html"></include>
 
     <main>
@@ -27,8 +27,12 @@
           <h1 class="shoppingList-title">Shopping <span>List</span></h1>
 
           <ul class="books-shoppingList"></ul>
+
+          <ul class="books-shoppingList-listPage"></ul>
+
         </div>
       </div>
     </main>
+    <script type="module" src="./js/shopping-list/shopping-list.js "></script>
   </body>
 </html>
