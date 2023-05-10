@@ -10,6 +10,21 @@
   background-color: transparent;
 }
 
+.add-to-list-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 56px;
+  border: 2px solid #4F2EE8;
+  background-color: transparent;
+  border-radius: 20px;
+  padding-top: 10px;
+  padding: 14px 23px;
+  // position: absolute;
+  // bottom: 0;
+}
+
 .close-button{
 }
 .modal {
@@ -39,7 +54,7 @@
   width: 80%;
   height: 762px;
   overflow-y: auto;
-  position: relative;
+  position: absolute;
 }
 .close-button {
   position: absolute;
