@@ -9,76 +9,76 @@ const ulMarkupSL = document.querySelector('.books-shoppingList');
 let limitSlp = 0;
 let thisPageSlp = 1;
 // -------------JSON------------------
-const parsedData = [
-  {
-    _id: '1',
-    book_image: '1',
-    title: 'Назва1',
-    publisher: 'група',
-    description: 'опис',
-    author: 'автор',
-  },
-  {
-    _id: '2',
-    book_image: new URL('/src/images/empty-page.png', import.meta.url),
-    title: 'Назва2',
-    publisher: 'група',
-    description: 'опис',
-    author: 'автор',
-  },
-  {
-    _id: '3',
-    book_image: new URL('/src/images/empty-page.png', import.meta.url),
-    title: 'Назва3',
-    publisher: 'група',
-    description: 'опис',
-    author: 'автор',
-  },
-  {
-    _id: '4',
-    book_image: new URL('/src/images/empty-page.png', import.meta.url),
-    title: 'Назва4',
-    publisher: 'група',
-    description: 'опис',
-    author: 'автор',
-  },
-  {
-    _id: '5',
-    book_image: new URL('/src/images/empty-page.png', import.meta.url),
-    title: 'Назва5',
-    publisher: 'група',
-    description: 'опис',
-    author: 'автор',
-  },
-  {
-    _id: '6',
-    book_image: new URL('/src/images/empty-page.png', import.meta.url),
-    title: 'Назва6',
-    publisher: 'група',
-    description: 'опис',
-    author: 'автор',
-  },
-  {
-    _id: '7',
-    book_image: new URL('/src/images/empty-page.png', import.meta.url),
-    title: 'Назва7',
-    publisher: 'група',
-    description: 'опис',
-    author: 'автор',
-  },
-  {
-    _id: '8',
-    book_image: new URL('/src/images/empty-page.png', import.meta.url),
-    title: 'Назва8',
-    publisher: 'група',
-    description: 'опис',
-    author: 'автор',
-  },
-];
-localStorage.setItem('parsedData', JSON.stringify(parsedData));
+// const parsedData = [
+//   {
+//     _id: '1',
+//     book_image: '1',
+//     title: 'Назва1',
+//     publisher: 'група',
+//     description: 'опис',
+//     author: 'автор',
+//   },
+//   {
+//     _id: '2',
+//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
+//     title: 'Назва2',
+//     publisher: 'група',
+//     description: 'опис',
+//     author: 'автор',
+//   },
+//   {
+//     _id: '3',
+//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
+//     title: 'Назва3',
+//     publisher: 'група',
+//     description: 'опис',
+//     author: 'автор',
+//   },
+//   {
+//     _id: '4',
+//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
+//     title: 'Назва4',
+//     publisher: 'група',
+//     description: 'опис',
+//     author: 'автор',
+//   },
+//   {
+//     _id: '5',
+//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
+//     title: 'Назва5',
+//     publisher: 'група',
+//     description: 'опис',
+//     author: 'автор',
+//   },
+//   {
+//     _id: '6',
+//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
+//     title: 'Назва6',
+//     publisher: 'група',
+//     description: 'опис',
+//     author: 'автор',
+//   },
+//   {
+//     _id: '7',
+//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
+//     title: 'Назва7',
+//     publisher: 'група',
+//     description: 'опис',
+//     author: 'автор',
+//   },
+//   {
+//     _id: '8',
+//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
+//     title: 'Назва8',
+//     publisher: 'група',
+//     description: 'опис',
+//     author: 'автор',
+//   },
+// ];
+// localStorage.setItem('parsedData', JSON.stringify(parsedData));
 // --------------------
-// let loadData = localStorage.getItem(KEY_SL);
-// let parsedData = JSON.parse(loadData);
+let loadData = localStorage.getItem(KEY_SL);
+let parsedData = JSON.parse(loadData);
 
 function loadBookSL() {
   parsedData != null
