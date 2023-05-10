@@ -7,18 +7,18 @@ const autirizationFormEl = document.querySelector('.authorization_form');
 const userNameEl = document.querySelector('#user_name');
 const userEmailEl = document.querySelector('#user_email');
 const userPasswordEl = document.querySelector('#user_password');
-const autorizationButtonEl = document.querySelector(
-  '.authorization_button_submit'
-);
+const autorizationButtonEl = document.querySelector('.authorization_button_submit');
+const OpenModalMobileButton = document.querySelector('.sign-up-button-burger');
 const signUpLink = document.querySelector('[data-action="sign-up"]');
 const signInLink = document.querySelector('[data-action="sign-in"]');
 const autorizationBackdrop = document.querySelector('.authorization_backdrop');
 const signInForm = document.querySelector('#sign-in');
 const signUpForm = document.querySelector('#sign-up');
-// const signUpMobileButton = document.querySelector('.signup-mobile-button');
+
 
 openModalButton.addEventListener('click', openModal);
-// signUpMobileButton.addEventListener('click', openModal);
+OpenModalMobileButton.addEventListener('click', openModal);
+
 
 function onBackdropClick(event) {
   if (event.currentTarget === event.target) {
