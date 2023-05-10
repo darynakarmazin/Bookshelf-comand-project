@@ -8,7 +8,7 @@ const ulBooksList = document.querySelector('.books-list');
 const divBooksList = document.querySelector('.books-list-title');
 let limit = 1;
 
-window.addEventListener('resize', debounce(onRenderBestsellers, 1000));
+window.addEventListener('resize', debounce(onRenderBestsellers, 500));
 
 onRenderBestsellers();
 export function onRenderBestsellers() {
