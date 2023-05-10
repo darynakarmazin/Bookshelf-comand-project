@@ -47,7 +47,7 @@ window.onload = function() {
   const closeButton = document.querySelector('[data-modal-close]');
   const modalBackground = document.querySelector('.modal');
 
-  modalBackground.addEventListener('click', (event) => {
+  closeButton.addEventListener('click', (event) => {
     if (event.target === closeButton) {
       closeModal();
     }
@@ -67,17 +67,23 @@ function renderStats(book) {
     <div class="book-cover-container">
       <img src="${book.book_image}" alt="${book.title}" class="book-cover">
     </div>
-    <p class="book-title">${book.title}</p>
-    <p class="book-author">Author: ${book.author}</p>
-    <p class="book-description">${book.description}</p>
+    <div class="modal-text">
+      <p class="book-title">${book.title}</p>
+      <p class="book-author">Author: ${book.author}</p>
+      <p class="book-description">${book.description}</p>
+      <ul class="svg-list">
+        ${book.buy_links.slice(0,3).map(link => `
+        <li>
+          <a href="${link.url}">
+            ${link.name}
+          </a>
+        </li>`)
+          .join('')}
+      </ul>
+    </div>
   `;
   const modalContent = document.querySelector('.modal-content');
   modalContent.innerHTML = content;
 }
 
-
-
-//     <h2 class="book-title"></h2>
-//     <p class="book-author"></p>
-//     <p class="book-description"></p>
-// book.list_name
+//`https://books-backend.p.goit.global/books/${bookId}`
