@@ -47,19 +47,23 @@ export function onFiltred(event) {
   removeActiveClass();
   event.target.classList.add('active');
 
+  function removeActiveClass() {
+    const listNames = document.querySelectorAll('.categories-list-name');
+    listNames.forEach(elem => {
+      if (elem.textContent === cateroryName) {
+        elem.classList.add('active');
+      } else {
+        elem.classList.remove('active');
+      }
+    });
+  }
+
   if (cateroryName === 'Best Sellers Books') {
     onRenderBestsellers();
     return;
   }
   onLoader();
   fetchBooks(cateroryName).then(dataMarkup).catch();
-}
-
-function removeActiveClass() {
-  const listNames = document.querySelectorAll('.categories-list-name');
-  listNames.forEach(elem => {
-    elem.classList.remove('active');
-  });
 }
 
 function dataMarkup(booksData) {

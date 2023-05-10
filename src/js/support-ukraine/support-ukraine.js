@@ -1,24 +1,28 @@
 import { array } from './support-ukraine-array';
+import debounce from 'lodash.debounce';
 
 const container = document.querySelector('#support-ukraine');
 const loadMoreBtn = document.querySelector('button.button-support-ukraine');
 let limit = 0;
 let inc = 2;
 
-(function () {
-  const vw = Math.max(
-    document.documentElement.clientWidth || 0,
-    window.innerWidth || 0
-  );
-  console.log(vw);
-  if (vw < 768) {
-    limit = 4;
-    renderListSupport(array, limit);
-  } else {
-    limit = 6;
-    renderListSupport(array, limit);
-  }
-})();
+window.addEventListener('resize', debounce(resize, 1000));
+
+resize();
+function resize() {
+  (function () {
+    const vw = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    );
+    if (vw < 768) {
+      limit = 4;
+    } else {
+      limit = 6;
+    }
+  })();
+  renderListSupport(array, limit);
+}
 
 function renderListSupport(array, limit) {
   clearContainer();
@@ -71,7 +75,6 @@ function scrolList() {
 }
 
 function renderListScrol(array, limit, inc) {
-  console.log('inc', inc);
   const markup = array
     .map(({ title, url, img, img2 }, index) => {
       index += 1;
