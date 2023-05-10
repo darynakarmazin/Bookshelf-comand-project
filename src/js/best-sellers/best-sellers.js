@@ -33,7 +33,6 @@ function dataBestsellers(data) {
   }
 })();
 
-
   console.log(limit);
   ulBooksList.innerHTML = '';
   const dataBestsellers = data
