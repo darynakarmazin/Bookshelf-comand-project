@@ -1,9 +1,9 @@
 window.addEventListener('load', loadBookSL);
 
 let KEY_SL = 'parsedData';
-let imgEmpryBig = new URL('/src/images/empty-page@2.png', import.meta.url);
-let imgEmpry = new URL('/src/images/empty-page.png', import.meta.url);
-let imgIcon = new URL('/src/images/shopping-list-icon.svg', import.meta.url);
+// let imgEmpryBig = new URL('/src/images/empty-page@2.png', import.meta.url);
+// let imgEmpry = new URL('/src/images/empty-page.png', import.meta.url);
+// let imgIcon = new URL('/src/images/shopping-list-icon.svg', import.meta.url);
 const ulMarkupSL = document.querySelector('.books-shoppingList');
 // let limitSlp;
 let limitSlp = 0;
