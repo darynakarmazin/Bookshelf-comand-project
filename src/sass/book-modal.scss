@@ -1,198 +1,169 @@
-// computer version
 
-// .backdrop{
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background: rgba(46, 47, 66, 0.4);
-//     opacity: 1;
-//     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) , visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-// }
-
-// .backdrop.is-hidden{
-//     opacity: 0;
-//     visibility: hidden;
-//     pointer-events: none;
-// }
-
-//кнопка 
-
-//
-// .hr{
-//   width: 10px;
-//   height: 10px;
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   border: 1px solid black;
-//   z-index: 9999;
-// }
-
-// .close{
-//   border: 1px solid black;
-//   width: 20px;
-//   height: 20px;
-//   z-index: 9999;
-// }
-
-
-.modal {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(17, 17, 17, 0.4);
-    display: none;
-  }
-  
-  .modal-active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .svg-list{
-    display: flex;
-  }
-  
-  .modal-content {
-    background: #FFFFFF;
-    border: 2px solid #111111;
-    border-radius: 18px;
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    max-width: 800px;
-    width: 80%;
-    height: 762px;
-    overflow-y: auto;
-    position: relative;
-  }
-  
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .book-title{
-    color: black;
-  }
-
-  // style in modal
-  .book-title{
-    margin-top: 14px;
-    margin-bottom: 4px;
-    font-family: DM Sans;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1,125;
-    letter-spacing: -0.04em;
-    text-align: left;
-
-  }
-  
-  .book-author{
-    margin-bottom: 18px;
-    font-family: DM Sans;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 14px;
-    letter-spacing: -0.04em;
-    text-align: left;
-    font-size: 12px;
-    color: #B4AFAF;
-  }
-
-  .book-description{
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: -0.04em;
-    text-align: left;
-    font-family: DM Sans;
-    margin-bottom: 18px;
-  }
-
-  .modal-text{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .aSvg{
-    background-color: red;
-    fill: black;
-  }
-  .baaa{
-    background-color: red;
-    fill: black;
-  }
-
-
-  .book-cover{
-    // width: 100%;
-    width: 100%;
-    height: 408px;
-    border-radius: 8px;
-    margin: 0 auto;
-    margin-top: 20px;
-  }
-
-  .book-cover-container{
-    // margin: 0 auto;
-    // width: 100%;
-    padding: 0;
-    width: 100%;
-  }
-
-  .modal-content{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .photo-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* TABLET */
-@media screen and (min-width: 768px) {
-  .modal-content{
-    width: 579px;
-    height: 465px;
-  }
-  .book-cover{
-    width: 192px;
-    height: 281px;
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    margin-top: 0;
-  }
-  .book-title{
-  }
-  .book-description{
-    max-width: 280px;
-    margin-bottom: 28.5px;
-  }
-  .book-author{
-  }
-  .modal-text{
-    max-width: 280px;
-    position: absolute;
-    right: 80px;
-  }
+.hr-mob{
+  width: 12px;
+  height: 12px;
 }
 
+.close-mob{
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+}
+
+.close-button{
+}
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.4);
+  display: none;
+}
+
+.modal-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #FFFFFF;
+  border: 2px solid #111111;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  width: 80%;
+  height: 762px;
+  overflow-y: auto;
+  position: relative;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.book-title{
+  color: black;
+}
+
+// style in modal
+.book-title{
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.16;
+  color: #111111;
+  margin-top: 14px;
+  margin-left: 4px;
+}
+.book-author{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28;
+  color: #B4AFAF;
+  margin-top: 14px;
+  margin-left: 4px;
+  margin-bottom: 18px;
+}
+
+.book-description{
+  font-family: DM Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: -0.04em;
+  max-width: 280px;
+  margin: 0;
+  margin-bottom: 22px;
+  margin-left: 4px;
+}
+.book-cover{
+  // width: 100%;
+  width: 100%;
+  height: 408px;
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.book-cover-container{
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-text{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.photo-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+.modal-content{
+  width: 579px;
+  height: 465px;
+}
+.book-cover{
+  width: 192px;
+  height: 281px;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+}
+.book-title{
+  margin-top: 0;
+  margin-left: 0;
+  font-size: 24px;
+}
+.book-description{
+}
+.book-author{
+}
+.modal-text{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-left: 236px;
+  margin-right: 40px;
+  margin-top: 20px;
+}
+.svg-list{
+  display: flex;
+  margin-right: 60px;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+}
 
 /* DESKTOP */
-@media screen and (min-width: 1400px) {
-}
+// @media screen and (min-width: 1400px) {
+// }
