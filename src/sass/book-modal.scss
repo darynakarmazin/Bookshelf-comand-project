@@ -5,6 +5,7 @@
 }
 
 .close-mob{
+  // position: rel;
   width: 24px;
   height: 24px;
   background-color: transparent;
@@ -20,7 +21,7 @@
   background-color: transparent;
   border-radius: 20px;
   padding-top: 10px;
-  padding: 14px 23px;
+  padding: 14px 28px;
   // position: absolute;
   // bottom: 0;
 }
@@ -57,9 +58,9 @@
   position: absolute;
 }
 .close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  position: relative;
+  top: -380px;
+  left: 250px;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
@@ -145,6 +146,7 @@
 .modal-content{
   width: 579px;
   height: 465px;
+  
 }
 .book-cover{
   width: 192px;
@@ -157,6 +159,14 @@
   margin-top: 0;
   margin-left: 0;
   font-size: 24px;
+}
+.add-to-list-button{
+  padding: 20 155px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-top: 200px;
 }
 .book-description{
 }
@@ -176,6 +186,10 @@
   margin-right: 60px;
   align-items: flex-end;
   justify-content: flex-end;
+}
+.close-button{
+  top: -230px;
+  left: 370px;
 }
 }
 
