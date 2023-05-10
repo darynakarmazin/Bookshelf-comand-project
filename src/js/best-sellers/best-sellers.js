@@ -38,7 +38,6 @@ function dataBestsellers(data) {
       limit = 5;
     }
   }
-  // console.log(limit);
   ulBooksList.innerHTML = '';
   const dataBestsellers = data
     .map(elem => {
