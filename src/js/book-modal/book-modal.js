@@ -1,8 +1,9 @@
-window.onload = function() {
+window.onload = function () {
   const ulBooksList = document.querySelectorAll('.books-list');
+  const ulBooksListTop = document.querySelectorAll('.books-list-top');
 
   ulBooksList.forEach(book => {
-    book.addEventListener('click', (event) => {
+    book.addEventListener('click', event => {
       event.preventDefault();
 
       // Знайдіть модальне вікно та елементи з інформацією про книгу
@@ -17,14 +18,12 @@ window.onload = function() {
       const bookId = bookLink.dataset.id;
       // console.log(bookId);
 
-      if (!bookId) {
-        console.error('data-id attribute not found on the book link');
-        return;
-      }
+if (!bookId) {
+  console.error('data-id attribute not found on the book link');
+  return;
+}modal.classList.add('modal-active');
 
-      modal.classList.add('modal-active');
-
-      fetch(`https://books-backend.p.goit.global/books/${bookId}`)
+fetch(`https://books-backend.p.goit.global/books/${bookId}`)
   .then(response => response.json())
   .then(data => {
     const book = data;
@@ -35,32 +34,48 @@ window.onload = function() {
       console.error('The book object is empty.');
     }
   })
-  
+
   .catch(error => console.error(error));
+});
+});
 
-    });
-  });
+ulBooksListTop.forEach(book => {
+book.addEventListener('click', event => {
+event.preventDefault();
 
+// Знайдіть модальне вікно та елементи з інформацією про книгу
+const modal = document.querySelector('.modal');
+const title = modal.querySelector('.book-title');
+const author = modal.querySelector('.book-author');
+const description = modal.querySelector('.book-description');
 
-  // Закриття модального вікна при натисканні на кнопку закриття або за межами вікна
-  const modal = document.querySelector('[data-modal]');
-  const closeButton = document.querySelector('[data-modal-close]');
-  const modalBackground = document.querySelector('.modal');
-
-  closeButton.addEventListener('click', (event) => {
-    if (event.target === closeButton) {
-      closeModal();
-    }
-  });
-
-  modalBackground.addEventListener('click', () => {
-    closeModal();
-  });
-
-  function closeModal() {
-    modalBackground.classList.remove('modal-active');
-  }
+const bookLink = event.target.closest('.books-list-img');
+// console.log(bookLink);
+if (!bookLink) return;
+const bookId = bookLink.dataset.id;
+if (!bookId) {
+  console.error('data-id attribute not found on the book link');
+  return;
 }
+
+modal.classList.add('modal-active');
+
+fetch(`https://books-backend.p.goit.global/books/${bookId}`)
+  .then(response => response.json())
+  .then(data => {
+    const book = data;
+    console.log(book);
+    if (book) {
+      renderStats(book);
+    } else {
+      console.error('The book object is empty.');
+    }
+  })
+
+  .catch(error => console.error(error));
+});
+});
+};
 
 function renderStats(book) {
   const content = `
@@ -86,4 +101,21 @@ function renderStats(book) {
   modalContent.innerHTML = content;
 }
 
-//`https://books-backend.p.goit.global/books/${bookId}`
+// Закриття модального вікна при натисканні на кнопку закриття
+const closeButton = document.querySelector('.close-mob');
+closeButton.addEventListener('click', () => {
+  closeModal();
+});
+
+// Закриття модального вікна при натисканні за межами вікна
+const modalBackground = document.querySelector('.modal');
+modalBackground.addEventListener('click', event => {
+  if (event.target === modalBackground) {
+    closeModal();
+  }
+});
+
+function closeModal() {
+  const modal = document.querySelector('.modal');
+  modal.classList.remove('modal-active');
+}
