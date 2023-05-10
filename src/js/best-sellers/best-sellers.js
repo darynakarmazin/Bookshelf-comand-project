@@ -8,16 +8,24 @@ const ulBooksList = document.querySelector('.books-list');
 const divBooksList = document.querySelector('.books-list-title');
 let limit = 1;
 
-window.addEventListener('resize', debounce(onRenderBestsellers, 500));
-
 onRenderBestsellers();
 export function onRenderBestsellers() {
   onLoader();
   fetchTopBooks().then(dataBestsellers).catch();
 }
 
+window.addEventListener(
+  'resize',
+  debounce(() => {
+    if (ulBooksList.textContent == '') {
+      onRenderBestsellers();
+    } else return;
+  }, 250)
+);
+
 function dataBestsellers(data) {
-  (function () {
+  resizeLimit();
+  function resizeLimit() {
     const vw = Math.max(
       document.documentElement.clientWidth || 0,
       window.innerWidth || 0
@@ -29,8 +37,7 @@ function dataBestsellers(data) {
     } else {
       limit = 5;
     }
-  })();
-
+  }
   // console.log(limit);
   ulBooksList.innerHTML = '';
   const dataBestsellers = data
