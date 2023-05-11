@@ -126,8 +126,6 @@
 //   modal.classList.remove('modal-active');
 // }
 
-
-
 window.onload = function () {
   const ulBooksList = document.querySelectorAll('.books-list');
   const ulBooksListTop = document.querySelectorAll('.books-list-top');
@@ -213,12 +211,16 @@ function renderStats(book) {
       <p class="book-author">Author: ${book.author}</p>
       <p class="book-description">${book.description}</p>
       <ul class="svg-list">
-        ${book.buy_links.slice(0,3).map(link => `
+        ${book.buy_links
+          .slice(0, 3)
+          .map(
+            link => `
         <li>
-          <a href="${link.url}">
+          <a href="${link.url}" target="_blank">
             ${link.name}
           </a>
-        </li>`)
+        </li>`
+          )
           .join('')}
       </ul>
     </div>
@@ -282,7 +284,6 @@ function updateShoppingListInfo() {
   const shoppingListInfo = document.querySelector('.shopping-list-info');
   shoppingListInfo.textContent = `Shopping List (${bookList.length} books)`;
 }
-
 
 // Закриття модального вікна при натисканні на кнопку закриття
 const closeButton = document.querySelector('.close-mob');
