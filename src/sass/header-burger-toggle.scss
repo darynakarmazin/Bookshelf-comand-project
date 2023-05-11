@@ -311,3 +311,125 @@ input[type='checkbox']:checked ~ .check::after {
     margin-right: 745px;
   }
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.user-bar {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    position: relative;
+    display: block;
+  }
+}
+
+.user-bar-button {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 184px;
+  max-width: 260px;
+  height: 45px;
+  padding: 4px 12px;
+
+  background: var(--purple-color);
+  border: 0;
+  border-radius: 36px;
+  cursor: pointer;
+}
+
+.user-bar-button-icon {
+  margin-right: 9px;
+}
+
+.user-bar-button-text {
+  margin-right: 4px;
+
+  font-weight: 700;
+  font-size: 22px;
+  line-height: calc(29 / 22);
+  letter-spacing: -0.02em;
+  color: var(--white-color);
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.dropdown {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  
+
+  border-radius: 0 0 22px 22px;
+  background-color: var(--purple-color);
+
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: var(--animation);
+}
+
+.user-bar-button-arrow-icon {
+  transition: var(--animation);
+}
+
+.user-bar .is-active {
+  & .dropdown {
+    transform: scaleY(1);
+  }
+
+  & .user-bar-button-arrow-icon {
+    transform: scale(1, -1);
+  }
+}
+
+.dropdown-list-item {
+  width: 100%;
+}
+
+.log-out-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: 14px 24px;
+
+  background: var(--white-color);
+  border: 1.5px solid var(--black-color);
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.log-out-button-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  letter-spacing: -0.04em;
+  color: var(--black-color);
+}
+
+// .js-user-container{
+// display: none;
+// }
+
+// .log-out-button{
+//   visibility: hidden;
+// }
