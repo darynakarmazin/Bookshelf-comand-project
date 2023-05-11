@@ -5,10 +5,20 @@
 }
 
 .close-mob {
-  // position: rel;
+  // position: relative; 
   width: 24px;
   height: 24px;
   background-color: transparent;
+}
+
+.shopping-list-text{
+  font-family: DM Sans;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-align: left;
+
 }
 
 .add-to-list-button {
@@ -20,20 +30,26 @@
   border: 2px solid #4f2ee8;
   background-color: transparent;
   border-radius: 20px;
-  padding-top: 10px;
-  padding: 14px 28px;
+  // padding-top: 10px;
+  // padding: 14px 28px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 28px;
+  padding-right: 28px;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.33px;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--black-color);
+  // max-width: 500px;
 
   // position: absolute;
   // bottom: 0;
 }
 
 .close-button {
+  
 }
 .modal {
   position: fixed;
@@ -168,7 +184,8 @@
     font-size: 24px;
   }
   .add-to-list-button {
-    padding: 20 155px;
+    // padding: 20 155px;
+    padding: 20px 125px;
     display: flex;
     justify-content: center;
     align-items: center;
