@@ -354,7 +354,7 @@ input[type='checkbox']:checked ~ .check::after {
   height: 45px;
   padding: 4px 12px;
 
-  background: var(--purple-color);
+  background: #4f2ee8;
   border: 0;
   border-radius: 36px;
   cursor: pointer;
@@ -371,7 +371,7 @@ input[type='checkbox']:checked ~ .check::after {
   font-size: 22px;
   line-height: calc(29 / 22);
   letter-spacing: -0.02em;
-  color: var(--white-color);
+  color: #ffffff;
 
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -411,6 +411,30 @@ input[type='checkbox']:checked ~ .check::after {
 
 .dropdown-list-item {
   width: 100%;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.user-icon {
+  width: 37px;
+  height: 37px;
+  margin-right: 9px;
+}
+
+.user-name {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.31;
+
+  letter-spacing: -0.02em;
+
+  color: #ffffff;
 }
 
 // .log-out-button {
