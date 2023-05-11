@@ -1,6 +1,6 @@
 window.addEventListener('load', loadBookSL);
 
-const KEY_SL = 'parsedData';
+const KEY_SL = 'bookList';
 let imgEmpryBig = new URL('/src/images/empty-page@2.png', import.meta.url);
 let imgEmpry = new URL('/src/images/empty-page.png', import.meta.url);
 let imgchop1 = new URL('/src/images/shop1.png', import.meta.url);
@@ -9,7 +9,6 @@ let imgchop3 = new URL('/src/images/shop3.png', import.meta.url);
 let imgIcon = new URL('/src/images/trash-03.png', import.meta.url);
 
 const ulMarkupSL = document.querySelector('.books-shoppingList');
-// -------------JSON------------------
 // const parsedData = [
 //   {
 //     _id: '1',
@@ -81,11 +80,24 @@ const ulMarkupSL = document.querySelector('.books-shoppingList');
 let loadData = localStorage.getItem(KEY_SL);
 let parsedData = JSON.parse(loadData);
 
-let limit = parsedData.length;
-
+// ---------------------екран------------------
+// (function limitVW() {
+//   const vw = Math.max(
+//     document.documentElement.clientWidth || 0,
+//     window.innerWidth || 0
+//   );
+//   if (vw < 768) {
+//     limitSlp = 4;
+//     return limitSlp;
+//   } else {
+//     limitSlp = 3;
+//     return limitSlp;
+//   }
+// })();
+// ----------------------------
 function loadBookSL() {
-  parsedData != null
-    ? markupBookContent(parsedData, limit)
+  loadData != null
+    ? markupBookContent(parsedData)
     : (ulMarkupSL.innerHTML = markupBookZoro);
 }
 
@@ -103,17 +115,17 @@ const markupBookZoro = `<li><p class="shoppingList-text">
             </picture>
           </a></li>`;
 
-function markupBookContent(parsedData, limit) {
+function markupBookContent(parsedData) {
   ulMarkupSL.innerHTML = '';
   const markupBookLi = parsedData
     .map((parsedData, i) => {
       i += 1;
-      if (i < limit + 1) {
+      if (i < parsedData.length + 1) {
         return `<li class="books-shoppingListLi">
                 <img
                   class="books-shoppingList-img"
                   src="${parsedData.book_image}"
-                  alt="Book"
+                  alt=""
                 />
                 <div class="box-shoppingList-content">
                   <div id="cont" class="box-shoppingList">
@@ -125,7 +137,7 @@ function markupBookContent(parsedData, limit) {
                        <img
                             class="box-shoppingList-trash-icon"
                             src="${imgIcon}"
-                            alt="amazon"
+                            alt="trash"
 
                             />       
                       </svg>   
@@ -185,15 +197,15 @@ function markupBookContent(parsedData, limit) {
     })
     .join('');
   ulMarkupSL.innerHTML = markupBookLi;
+
   deliteBookId();
 }
 
 function deliteBookId() {
   let dots = document.getElementsByClassName('box-shoppingList-trash');
   let i;
-  let length = dots.length;
 
-  for (i = 0; i < length; i++) {
+  for (i = 0; i < dots.length; i++) {
     dots[i].addEventListener('click', e => {
       keyId = e.target.parentElement.attributes.id.value;
       let filtered = parsedData.filter(o => o._id !== keyId);
