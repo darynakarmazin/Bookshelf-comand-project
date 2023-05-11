@@ -1,13 +1,14 @@
 window.addEventListener('load', loadBookSL);
 
-let KEY_SL = 'parsedData';
-// let imgEmpryBig = new URL('/src/images/empty-page@2.png', import.meta.url);
-// let imgEmpry = new URL('/src/images/empty-page.png', import.meta.url);
-// let imgIcon = new URL('/src/images/shopping-list-icon.svg', import.meta.url);
+const KEY_SL = 'parsedData';
+let imgEmpryBig = new URL('/src/images/empty-page@2.png', import.meta.url);
+let imgEmpry = new URL('/src/images/empty-page.png', import.meta.url);
+let imgchop1 = new URL('/src/images/shop1.png', import.meta.url);
+let imgchop2 = new URL('/src/images/shop2.png', import.meta.url);
+let imgchop3 = new URL('/src/images/shop3.png', import.meta.url);
+let imgIcon = new URL('/src/images/trash-03.png', import.meta.url);
+
 const ulMarkupSL = document.querySelector('.books-shoppingList');
-// let limitSlp;
-let limitSlp = 0;
-let thisPageSlp = 1;
 // -------------JSON------------------
 // const parsedData = [
 //   {
@@ -80,9 +81,11 @@ let thisPageSlp = 1;
 let loadData = localStorage.getItem(KEY_SL);
 let parsedData = JSON.parse(loadData);
 
+let limit = parsedData.length;
+
 function loadBookSL() {
   parsedData != null
-    ? markupBookContent(parsedData)
+    ? markupBookContent(parsedData, limit)
     : (ulMarkupSL.innerHTML = markupBookZoro);
 }
 
@@ -100,32 +103,13 @@ const markupBookZoro = `<li><p class="shoppingList-text">
             </picture>
           </a></li>`;
 
-function limitVW() {
-  const vw = Math.max(
-    document.documentElement.clientWidth || 0,
-    window.innerWidth || 0
-  );
-  console.log(vw);
-  if (vw < 768) {
-    console.log('vw1');
-    limitSlp = 4;
-    // markupBookContent(parsedData, limit);
-  } else {
-    console.log('vw2');
-    limitSlp = 3;
-    // markupBookContent(parsedData, limit);
-  }
-}
-// --------------------------------------------------
-
-// -----------------------------------------
-function markupBookContent(parsedData) {
+function markupBookContent(parsedData, limit) {
   ulMarkupSL.innerHTML = '';
-  console.log('vw3');
   const markupBookLi = parsedData
-    .map(parsedData => {
-      // console.log("vw4");
-      return `<li class="item books-shoppingListLi">
+    .map((parsedData, i) => {
+      i += 1;
+      if (i < limit + 1) {
+        return `<li class="books-shoppingListLi">
                 <img
                   class="books-shoppingList-img"
                   src="${parsedData.book_image}"
@@ -138,11 +122,13 @@ function markupBookContent(parsedData) {
                       <p class="text-shoppingList-category">${parsedData.publisher}</p>
                     </div>
                     <button class="box-shoppingList-trash" id="${parsedData._id}">
-                      <svg class="box-shoppingList-trash-icon">
-                        <use
-                          href="${imgIcon}#icon-trash"
-                        ></use>
-                      </svg>
+                       <img
+                            class="box-shoppingList-trash-icon"
+                            src="${imgIcon}"
+                            alt="amazon"
+
+                            />       
+                      </svg>   
                     </button>
                   </div>
                   <p class="text-shoppingList-content">
@@ -156,35 +142,38 @@ function markupBookContent(parsedData) {
                           class="shop-shoppingList-link"
                           href="https://www.amazon.com"
                         >
-                          <svg class="shop-shoppingList-img1">
-                            <use
-                              href="${imgIcon}#icon-shop1"
-                            ></use>
-                          </svg>
+                           <img
+                            class="shop-shoppingList-img1"
+                            src="${imgchop1}"
+                            alt="amazon"
+
+                            />       
                         </a>
                       </li>
                       <li>
                         <a
                           class="shop-shoppingList-link"
-                          href="https://www.google.com/"
-                        >
-                          <svg class="shop-shoppingList-img2">
-                            <use
-                              href="${imgIcon}#icon-shop2"
-                            ></use>
-                          </svg>
+                          href="https://goto.applebooks.apple"
+                        >                          
+                          <img
+                            class="shop-shoppingList-img2"
+                            src="${imgchop2}"
+                            alt="amazon"
+
+                          />           
                         </a>
                       </li>
                       <li>
                         <a
                           class="shop-shoppingList-link"
-                          href="https://www.google.com/"
+                          href="https://du-gae-books-dot-nyt-du-prd.appspot.com"
                         >
-                          <svg class="shop-shoppingList-img2">
-                            <use
-                              href="${imgIcon}#icon-shop3"
-                            ></use>
-                          </svg>
+                           <img
+                            class="shop-shoppingList-img2"
+                            src="${imgchop3}"
+                            alt="amazon"
+
+                            />       
                         </a>
                       </li>
                     </ul>
@@ -192,104 +181,27 @@ function markupBookContent(parsedData) {
                 </div>
               </li>
             `;
+      }
     })
     .join('');
-  // console.log("vw5");
   ulMarkupSL.innerHTML = markupBookLi;
-
-  // deliteBookId()
-  loadItem();
-
-  console.log(888888);
-}
-// -----------------------------
-function loadItem() {
-  limitVW();
-
-  let listSlp = document.querySelectorAll('.item');
-  let beginGet = limitSlp * (thisPageSlp - 1);
-  let endGet = limitSlp * thisPageSlp - 1;
-  console.log('loadItem1');
-  console.log(limitSlp);
-  console.log('loadItem1');
-  console.log(beginGet);
-  console.log(endGet);
-  listSlp.forEach((item, key) => {
-    if (key >= beginGet && key <= endGet) {
-      item.classList.add('item');
-      // console.log("loadItem2");
-    } else {
-      item.classList.add('itemNone');
-    }
-  });
-  console.log('loadEnd');
-
-  listPage();
+  deliteBookId();
 }
 
-function listPage() {
-  console.log('ctartbtn');
-  console.log(limitSlp);
-  // console.log("ctartbtn")
-
-  let count = Math.ceil(document.querySelectorAll('.item').length / limitSlp);
-  console.log(cont);
-  document.querySelector('.books-shoppingList-listPage').innerHTML = '';
-  console.log('marcuo000');
-  console.log(thisPageSlp);
-
-  if (thisPageSlp != 1) {
-    let prev = document.createElement('li');
-    prev.innerText = 'Prev';
-    prev.setAttribute('onclick', 'changePage(' + (thisPageSlp - 1) + ')');
-    document.querySelector('.books-shoppingList-listPage').appendChild(prev);
-  }
-
-  for (i = 1; i <= count; i++) {
-    let newPageSlp = document.createElement('li');
-    newPageSlp.innerText = i;
-    if (i == thisPageSlp) {
-      newPageSlp.classList.add('activeSlp');
-    }
-    newPageSlp.setAttribute('onclick', 'changePage(' + i + ')');
-    document
-      .querySelector('.books-shoppingList-listPage')
-      .appendChild(newPageSlp);
-  }
-
-  if (thisPageSlp != count) {
-    let next = document.createElement('li');
-    next.innerText = 'Next';
-    next.setAttribute('onclick', 'changePage(' + (thisPageSlp + 1) + ')');
-    document.querySelector('.books-shoppingList-listPage').appendChild(next);
-  }
-}
-
-function changePage(i) {
-  thisPageSlp = i;
-  loadItem();
-}
-// -----------------------------------
 function deliteBookId() {
-  console.log('n1');
-  var dots = document.getElementsByClassName('box-shoppingList-trash');
-
-  var i,
-    length = dots.length;
-  console.log('n2');
+  let dots = document.getElementsByClassName('box-shoppingList-trash');
+  let i;
+  let length = dots.length;
 
   for (i = 0; i < length; i++) {
     dots[i].addEventListener('click', e => {
       keyId = e.target.parentElement.attributes.id.value;
-      console.log(keyId);
       let filtered = parsedData.filter(o => o._id !== keyId);
 
-      console.log(filtered);
       localStorage.setItem(KEY_SL, JSON.stringify(filtered));
       loadData = localStorage.getItem(KEY_SL);
       parsedData = JSON.parse(loadData);
       loadBookSL();
     });
-    console.log('nnnn3');
   }
 }
