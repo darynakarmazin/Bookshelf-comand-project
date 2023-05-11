@@ -1,32 +1,39 @@
-
-.hr-mob{
+.hr-mob {
   width: 12px;
   height: 12px;
+  fill: var(--black-color);
 }
 
-.close-mob{
+.close-mob {
   // position: rel;
   width: 24px;
   height: 24px;
   background-color: transparent;
 }
 
-.add-to-list-button{
+.add-to-list-button {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
   margin-top: 56px;
-  border: 2px solid #4F2EE8;
+  border: 2px solid #4f2ee8;
   background-color: transparent;
   border-radius: 20px;
   padding-top: 10px;
   padding: 14px 28px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--black-color);
+
   // position: absolute;
   // bottom: 0;
 }
 
-.close-button{
+.close-button {
 }
 .modal {
   position: fixed;
@@ -46,8 +53,8 @@
 }
 
 .modal-content {
-  background: #FFFFFF;
-  border: 2px solid #111111;
+  background: var(--white-color);
+  border: 2px solid var(--black-color);
   border-radius: 18px;
   padding: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -66,30 +73,30 @@
   cursor: pointer;
 }
 
-.book-title{
-  color: black;
+.book-title {
+  color: var(--black-color);
 }
 
 // style in modal
-.book-title{
+.book-title {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.16;
-  color: #111111;
+  color: var(--black-color);
   margin-top: 14px;
   margin-left: 4px;
 }
-.book-author{
+.book-author {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28;
-  color: #B4AFAF;
+  color: var(--books-title-color);
   margin-top: 14px;
   margin-left: 4px;
   margin-bottom: 18px;
 }
 
-.book-description{
+.book-description {
   font-family: DM Sans;
   font-size: 14px;
   font-weight: 400;
@@ -100,7 +107,7 @@
   margin-bottom: 22px;
   margin-left: 4px;
 }
-.book-cover{
+.book-cover {
   // width: 100%;
   width: 100%;
   height: 408px;
@@ -109,7 +116,7 @@
   margin-top: 20px;
 }
 
-.book-cover-container{
+.book-cover-container {
   padding: 0;
   width: 100%;
   display: flex;
@@ -117,25 +124,25 @@
   justify-content: center;
 }
 
-.modal-content{
+.modal-content {
   display: flex;
   flex-direction: column;
 }
 
-.modal-text{
+.modal-text {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
 }
-.photo-container{
+.photo-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.svg-list{
+.svg-list {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,54 +150,53 @@
 
 /* TABLET */
 @media screen and (min-width: 768px) {
-.modal-content{
-  width: 579px;
-  height: 465px;
-  
-}
-.book-cover{
-  width: 192px;
-  height: 281px;
-  position: absolute;
-  top: 20px;
-  left: 40px;
-}
-.book-title{
-  margin-top: 0;
-  margin-left: 0;
-  font-size: 24px;
-}
-.add-to-list-button{
-  padding: 20 155px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0;
-  margin-top: 200px;
-}
-.book-description{
-}
-.book-author{
-}
-.modal-text{
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin-left: 236px;
-  margin-right: 40px;
-  margin-top: 20px;
-}
-.svg-list{
-  display: flex;
-  margin-right: 60px;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-.close-button{
-  top: -230px;
-  left: 370px;
-}
+  .modal-content {
+    width: 579px;
+    height: 465px;
+  }
+  .book-cover {
+    width: 192px;
+    height: 281px;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+  }
+  .book-title {
+    margin-top: 0;
+    margin-left: 0;
+    font-size: 24px;
+  }
+  .add-to-list-button {
+    padding: 20 155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin-top: 200px;
+  }
+  .book-description {
+  }
+  .book-author {
+  }
+  .modal-text {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 236px;
+    margin-right: 40px;
+    margin-top: 20px;
+  }
+  .svg-list {
+    display: flex;
+    margin-right: 60px;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  .close-button {
+    top: -230px;
+    left: 370px;
+  }
 }
 
 /* DESKTOP */
