@@ -65,7 +65,7 @@ function dataBestsellers(data) {
         <button data-filter="${elem.list_name}" class="list-name best-sellers-btn">see more</button>
         </div>
         </li>`;
-      const element2 = elementArray.join(', ');
+      const element2 = elementArray.join(' ');
       return element1 + element2 + element3;
     })
     .join(' ');
