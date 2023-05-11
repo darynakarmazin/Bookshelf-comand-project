@@ -258,6 +258,9 @@ window.onload = function () {
 };
 
 function renderStats(book) {
+  let imgchop1 = new URL('/src/images/shop1.png', import.meta.url);
+  let imgchop2 = new URL('/src/images/shop2.png', import.meta.url);
+  let imgchop3 = new URL('/src/images/shop3.png', import.meta.url);
   const content = `
     <div class="book-cover-container">
       <img src="${book.book_image}" alt="${book.title}" class="book-cover">
@@ -266,8 +269,44 @@ function renderStats(book) {
       <p class="book-title">${book.title}</p>
       <p class="book-author">Author: ${book.author}</p>
       <p class="book-description">${book.description}</p>
-    </div>
-    <button class="add-to-list-button"><p class="shopping-list-text">Add to Shopping List</p></button>
+      <ul class="box-shoppingList-shop">
+                      <li>
+                        <a
+                          class="shop-shoppingList-link"
+                          href="${book.buy_links[0].url}"
+                        >
+                          <img
+                            class="shop-shoppingList-img1"
+                            src="${imgchop1}"
+                            alt="amazon"
+                            />       
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="shop-shoppingList-link"
+                          href="${book.buy_links[1].url}"
+                        >                          
+                          <img
+                            class="shop-shoppingList-img2"
+                            src="${imgchop2}"
+                            alt="amazon"
+                          />           
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="shop-shoppingList-link"
+                          href="${book.buy_links[2].url}"
+                        >
+                          <img
+                            class="shop-shoppingList-img2"
+                            src="${imgchop3}"
+                            alt="amazon"
+                            />       
+                        </a>
+                      </li>
+                    </ul>
   `;
   const modalContent = document.querySelector('.modal-content');
   modalContent.innerHTML = content;
@@ -390,3 +429,54 @@ function closeModal() {
   const modal = document.querySelector('.modal');
   modal.classList.remove('modal-active');
 }
+
+
+// <ul class="svg-list">
+//         ${book.buy_links.slice(0,3).map(link => `
+//         <li>
+//           <a href="${link.url}">
+//             ${link.name}
+//           </a>
+//         </li>`)
+//           .join('')}
+//       </ul>
+
+
+{/* <ul class="box-shoppingList-shop">
+                      <li>
+                        <a
+                          class="shop-shoppingList-link"
+                          href="${book.buy_links[0].url}"
+                        >
+                          <img
+                            class="shop-shoppingList-img1"
+                            src="${imgchop1}"
+                            alt="amazon"
+                            />       
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="shop-shoppingList-link"
+                          href="${book.buy_links[1].url}"
+                        >                          
+                          <img
+                            class="shop-shoppingList-img2"
+                            src="${imgchop2}"
+                            alt="amazon"
+                          />           
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="shop-shoppingList-link"
+                          href="${book.buy_links[2].url}"
+                        >
+                          <img
+                            class="shop-shoppingList-img2"
+                            src="${imgchop3}"
+                            alt="amazon"
+                            />       
+                        </a>
+                      </li>
+                    </ul> */}
