@@ -15,7 +15,149 @@
     <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <include src="./partials/header-burger-toggle.html"></include>
+    <header>
+      <div class="header-container">
+        <a href="/src/index.html" class="header-logo-link"
+          ><svg class="header-logo">
+            <use href="./images/header-icons.svg#icon-logo"></use></svg
+          >Bookshelf</a
+        >
+        <nav class="navigation">
+          <ul class="site-nav">
+            <li class="site-nav__item">
+              <a href="/src/index.html" class="site-nav__link">Home</a>
+            </li>
+            <li class="site-nav__item_active">
+              <a href="./shopping-list.html" class="site-nav__link_active"
+                >Shopping list<svg class="site-nav__logo_active">
+                  <use href="./images/header-icons.svg#icon-uil_cart"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <label class="toggle-theme common-toggle">
+          <input type="checkbox" />
+          <span class="check"></span>
+        </label>
+
+        <button
+          class="sign-up-button"
+          type="button"
+          data-modal-open
+          aria-label="sign in"
+        >
+          <span class="sign-up-button_text">Sign up</span>
+          <svg class="sign-up-button_icon" width="20" height="20">
+            <use href="./images/icons.svg#golder-arrow-right"></use>
+          </svg>
+        </button>
+        <button type="button" class="burger-menu">
+          <svg class="burger-menu__icon">
+            <use href="./images/header-icons.svg#icon-paragraph-left"></use>
+          </svg>
+        </button>
+
+        <ul class="user-bar js-user-bar visually-hidden">
+          <li class="user-bar-item">
+            <!-- User-bar-btn -->
+            <button
+              class="user-bar-button js-user-bar-button"
+              type="button"
+              aria-label="user bar button"
+            >
+              <svg class="user-bar-button-icon" width="37" height="37">
+                <use href="/src/images/icons.svg#user-icon"></use>
+              </svg>
+              <span class="user-bar-button-text"></span>
+              <svg class="user-bar-button-arrow-icon" width="23" height="26">
+                <use href="/src/images/icons.svg#user-arrow-down"></use>
+              </svg>
+            </button>
+            <ul class="dropdown">
+              <li class="dropdown-list-item">
+                <!-- Log-out-btn -->
+                <button
+                  class="log-out-button js-log-out-button"
+                  type="button"
+                  aria-label="Log out"
+                >
+                  <span class="log-out-button-text">Log out</span>
+                  <svg class="log-out-button-icon" width="20" height="20">
+                    <use href="./images/icons.svg#golder-arrow-right"></use>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="mobile-menu-container">
+        <div class="burger-container">
+          <div class="mobile-menu__header">
+            <a href="/src/index.html" class="header-logo-link"
+              ><svg class="header-logo">
+                <use href="./images/header-icons.svg#icon-logo"></use></svg
+              >Bookshelf</a
+            >
+
+            <label class="toggle-theme common-toggle">
+              <input type="checkbox" />
+              <span class="check"></span>
+            </label>
+
+            <button type="button" class="mobile-menu__button">
+              <svg class="mobile-menu__icon">
+                <use href="./images/header-icons.svg#icon-close"></use>
+              </svg>
+            </button>
+          </div>
+          <button
+            class="sign-up-button-burger"
+            type="button"
+            data-modal-open
+            aria-label="sign in"
+          >
+            <span class="sign-up-button_text">Sign up</span>
+            <svg class="sign-up-button_icon" width="20" height="20">
+              <use href="./images/icons.svg#golder-arrow-right"></use>
+            </svg>
+          </button>
+          <div class="user-container js-user-container display-none">
+            <svg class="user-icon" width="37" height="37">
+              <use href="/src/images/icons.svg#user-icon"></use>
+            </svg>
+            <p class="user-name js-user-mobile-name"></p>
+          </div>
+          <nav class="navigation-burger">
+            <ul class="site-nav-burger">
+              <li class="site-nav__item">
+                <a href="/src/index.html" class="site-nav__link">HOME</a>
+              </li>
+              <li class="site-nav__item_active">
+                <a href="./shopping-list.html" class="site-nav__link_active"
+                  >SHOPPING LIST<svg class="site-nav__logo_active">
+                    <use href="./images/header-icons.svg#icon-uil_cart"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <button
+            class="log-out-button"
+            type="button"
+            data-modal-open
+            aria-label="sign in"
+          >
+            <span class="log-out-button_text">Log out</span>
+            <svg class="log-out-button_icon" width="20" height="20">
+              <use href="./images/icons.svg#golder-arrow-right"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
 
     <main>
       <div class="shoppingList-container">
