@@ -1,5 +1,11 @@
-import { app } from './firebase';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
+// import { app } from './firebase';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from 'firebase/auth';
 import { getDatabase, ref, set, onValue } from 'firebase/database';
 import Notiflix from 'notiflix';
 
@@ -8,7 +14,6 @@ const auth = getAuth(app);
 
 // Initialize Realtime Database and get a reference to the service
 const db = getDatabase(app);
-
 
 const openModalMobileButton = document.querySelector('.sign-up-button-burger');
 const openModalUserButton = document.querySelector('.sign-up-button');
@@ -27,8 +32,7 @@ const userName = document.querySelector('.user-bar-button-text');
 const userNameMobile = document.querySelector('.js-user-mobile-name');
 const loginedUserButton = document.querySelector('.js-user-bar-button');
 
-
-loginedUserButton.addEventListener('click', function() {
+loginedUserButton.addEventListener('click', function () {
   userBar.classList.add('is-active');
 });
 
@@ -37,7 +41,6 @@ signInForm.addEventListener('submit', signInUser);
 logOutButton.addEventListener('click', logOutUserAccount);
 logOutButtonUser.addEventListener('click', logOutUserAccount);
 
-    
 function registretedUser(event) {
   event.preventDefault();
 
@@ -88,7 +91,7 @@ function createUser(auth, userEmail, userPassword, userName) {
   createUserWithEmailAndPassword(auth, userEmail, userPassword)
     .then(cred => {
       let userId = cred.user.uid;
-      
+
       writeUserData(userId, userName, userEmail);
 
       Notiflix.Notify.success(
@@ -102,8 +105,8 @@ function createUser(auth, userEmail, userPassword, userName) {
       burgerNavigation.classList.remove('display-none');
       logOutButton.classList.remove('display-none');
       openModalMobileButton.classList.add('visually-hidden');
-        openModalUserButton.classList.add('visually-hidden');
-            })
+      openModalUserButton.classList.add('visually-hidden');
+    })
     .catch(error => {
       if (error.code === 'auth/email-already-in-use') {
         Notiflix.Notify.failure(
@@ -113,14 +116,11 @@ function createUser(auth, userEmail, userPassword, userName) {
     });
 }
 
-
 const writeUserData = (userId, userName, userEmail) => {
   set(ref(db, 'users/' + userId), {
     username: userName,
     email: userEmail,
-  }).catch(error => {
-    
-  });
+  }).catch(error => {});
 };
 
 // вхід зареєстрованого користувача
@@ -143,7 +143,6 @@ function signInUserAccount(auth, userEmail, userPassword) {
       } else if (error.code === 'auth/user-not-found') {
         Notiflix.Notify.failure('Your email is wrong, please try again');
       }
-     
     });
 }
 
@@ -151,7 +150,6 @@ function signInUserAccount(auth, userEmail, userPassword) {
 function checkUserAuth() {
   onAuthStateChanged(auth, user => {
     if (user) {
-      
       const userNameRef = ref(db, 'users/' + user.uid);
       onValue(userNameRef, name => {
         const currentUserName = name.exportVal();
@@ -167,7 +165,6 @@ function checkUserAuth() {
       burgerNavigation.classList.remove('display-none');
       logOutButton.classList.remove('display-none');
       openModalMobileButton.classList.add('display-none');
-        
 
       localStorage.setItem('user', 'true');
     }
