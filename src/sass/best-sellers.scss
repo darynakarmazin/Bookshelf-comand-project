@@ -165,7 +165,7 @@
     line-height: 1.08;
   }
   .category-top-books {
-    justify-content: space-around;
+    gap: 25px;
   }
   .category-top-books li {
     flex-basis: calc((100% - 2 * 25px) / 3);
@@ -194,6 +194,11 @@
   .caterories-content {
     flex: 0 1 996px;
   }
+
+  .category-top-books {
+    gap: 24px;
+  }
+
   .category-top-books li {
     flex-basis: calc((100% - 4 * 24px) / 5);
   }

@@ -7,3 +7,5 @@ import './js/best-sellers/best-sellers';
 import './js/book-modal/book-modal';
 
 import './js/authorization/authorization';
+import './js/authorization/firebase';
+import './js/authorization/sign-in-sign-up';

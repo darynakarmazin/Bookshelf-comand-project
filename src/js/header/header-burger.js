@@ -10,27 +10,44 @@ refs.closeBurgerBtn.addEventListener('click', toggleModal);
 function toggleModal() {
   refs.burger.classList.toggle('is-hidden');
 }
+// Toggler
+function setTheme(theme) {
 
-const toggleSwitch = document.querySelector(
-  '.toggle-theme input[type="checkbox"]'
-);
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  
+ 
+  const toggleSwitches = document.querySelectorAll('.common-toggle input[type="checkbox"]');
+  toggleSwitches.forEach(function(toggleSwitch) {
+    if (theme === 'dark') {
+      toggleSwitch.checked = true;
+    } else {
+      toggleSwitch.checked = false;
+    }
+  });
+}
+
+
 const currentTheme = localStorage.getItem('theme');
+
+
 if (currentTheme) {
-  document.documentElement.setAttribute('data-theme', currentTheme);
+  setTheme(currentTheme);
+} else {
 
-  if (currentTheme === 'dark') {
-    toggleSwitch.checked = true;
-  }
+  setTheme('light');
 }
 
-toggleSwitch.addEventListener('change', switchTheme, false);
+const toggleSwitches = document.querySelectorAll('.common-toggle input[type="checkbox"]');
+toggleSwitches.forEach(function(toggleSwitch) {
+  toggleSwitch.addEventListener('change', function(e) {
 
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
-  }
-}
+    if (e.target.checked) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  }, false);
+});
+
+
