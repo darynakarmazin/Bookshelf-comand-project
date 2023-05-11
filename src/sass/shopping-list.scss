@@ -27,7 +27,7 @@
 }
 
 .shoppingList-title span {
-  color: var(--purple-color);
+  color: #4f2ee8;
 }
 
 .shoppingList-text {
@@ -154,6 +154,7 @@
 .box-shoppingList-trash-icon {
   width: 16px;
   height: 16px;
+
   fill: white;
 }
 .box-shoppingList-trash:focus,
@@ -192,6 +193,7 @@
 }
 .box-shoppingList-shop {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 8px;
 }
@@ -203,14 +205,15 @@
 }
 .shop-shoppingList-img1 {
   width: 32px;
-  height: 16px;
-  fill: currentColor;
+  height: 11px;
+  filter: var(--icon-shop-white);
   transition: transform var(--animation), filter var(--animation);
 }
 .shop-shoppingList-img2 {
   width: 16px;
   height: 16px;
-  //   fill: currentColor;
+  opacity: 0, 4;
+  filter: grayscale(100%);
   transition: transform var(--animation), filter var(--animation);
 }
 .shop-shoppingList-img1:focus,
@@ -218,7 +221,7 @@
 .shop-shoppingList-img1:hover,
 .shop-shoppingList-img2:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  // filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
 }
 
 @media screen and (min-width: 768px) {
@@ -252,7 +255,7 @@
   }
   .shop-shoppingList-img1 {
     width: 48px;
-    height: 30px;
+    height: 16px;
   }
   .shop-shoppingList-img2 {
     width: 32px;
@@ -261,7 +264,7 @@
 }
 
 // --------pag
-.books-shoppingList-listPage {  
+.books-shoppingList-listPage {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -271,24 +274,23 @@
 }
 .books-shoppingList-listPage li {
   font-family: --main-font;
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 1.2;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
 
   width: 38px;
   height: 38px;
   background-color: var(--white-color);
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   color: var(--black-color);
   cursor: pointer;
   border: 1px solid #111111;
   border-radius: 50%;
-
 }
 .books-shoppingList-listPage li:focus,
 .books-shoppingList-listPage li:hover {
