@@ -188,6 +188,7 @@ input[type='checkbox']:checked ~ .check::after {
   background-image: url(../images/background-colors.png);
   background-position: bottom;
   background-repeat: no-repeat;
+  padding: 0;
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -252,7 +253,7 @@ input[type='checkbox']:checked ~ .check::after {
   align-items: center;
   justify-content: space-between;
   padding: 14px 24px;
-  margin-top: 390px;
+ margin-top: 447;
   position: relative;
   top: -10px;
   z-index: 1;
