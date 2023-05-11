@@ -83,7 +83,7 @@
 //       <p class="book-title">${book.title}</p>
 //       <p class="book-author">Author: ${book.author}</p>
 //       <p class="book-description">${book.description}</p>
-      
+
 //     </div>
 //     <button class="add-to-list-button"><p class="shopping-list-text">Add to Shopping List</p></button>
 //   `;
@@ -145,7 +145,6 @@
 //   const shoppingListInfo = document.querySelector('.shopping-list-info');
 //   shoppingListInfo.textContent = `Shopping List (${bookList.length} books)`;
 // }
-
 
 // // Закриття модального вікна при натисканні на кнопку закриття
 // const closeButton = document.querySelector('.close-mob');
@@ -242,7 +241,13 @@ window.onload = function () {
           console.log(book);
           if (book) {
             renderStats(book);
-            updateButton(bookId, book.title, book.author, book.description, book.book_image);
+            updateButton(
+              bookId,
+              book.title,
+              book.author,
+              book.description,
+              book.book_image
+            );
           } else {
             console.error('The book object is empty.');
           }
@@ -268,7 +273,13 @@ function renderStats(book) {
   modalContent.innerHTML = content;
 }
 
-function updateButton(bookId, bookTitle, bookAuthor, bookDescription, bookImageUrl) {
+function updateButton(
+  bookId,
+  bookTitle,
+  bookAuthor,
+  bookDescription,
+  bookImageUrl
+) {
   const button = document.querySelector('.add-to-list-button');
   const bookList = getBookListFromLocalStorage();
   const isBookInList = bookList.some(item => item.id === bookId);
@@ -280,11 +291,23 @@ function updateButton(bookId, bookTitle, bookAuthor, bookDescription, bookImageU
   }
 
   button.addEventListener('click', () => {
-    handleButtonClick(bookId, bookTitle, bookAuthor, bookDescription, bookImageUrl);
+    handleButtonClick(
+      bookId,
+      bookTitle,
+      bookAuthor,
+      bookDescription,
+      bookImageUrl
+    );
   });
 }
 
-function handleButtonClick(bookId, bookTitle, bookAuthor, bookDescription, bookImageUrl) {
+function handleButtonClick(
+  bookId,
+  bookTitle,
+  bookAuthor,
+  bookDescription,
+  bookImageUrl
+) {
   const button = document.querySelector('.add-to-list-button');
   const bookList = getBookListFromLocalStorage();
   const isBookInList = bookList.some(item => item.id === bookId);
@@ -293,7 +316,13 @@ function handleButtonClick(bookId, bookTitle, bookAuthor, bookDescription, bookI
     removeFromLocalStorage(bookId);
     button.textContent = 'Add to Shopping List';
   } else {
-    addToLocalStorage(bookId, bookTitle, bookAuthor, bookDescription, bookImageUrl);
+    addToLocalStorage(
+      bookId,
+      bookTitle,
+      bookAuthor,
+      bookDescription,
+      bookImageUrl
+    );
     button.textContent = 'Remove from Shopping List';
   }
 
@@ -305,20 +334,25 @@ function getBookListFromLocalStorage() {
   return bookList ? JSON.parse(bookList) : [];
 }
 
-function addToLocalStorage(bookId, bookTitle, bookAuthor, bookDescription, bookImage, bookImageURL) {
+function addToLocalStorage(
+  bookId,
+  bookTitle,
+  bookAuthor,
+  bookDescription,
+  bookImage,
+  bookImageURL
+) {
   const bookList = getBookListFromLocalStorage();
-  bookList.push({ 
+  bookList.push({
     id: bookId,
     title: bookTitle,
     author: bookAuthor,
     description: bookDescription,
     image: bookImage,
-    imageURL: bookImageURL
+    imageURL: bookImageURL,
   });
   localStorage.setItem('bookList', JSON.stringify(bookList));
 }
-
-
 
 function removeFromLocalStorage(bookId) {
   const bookList = getBookListFromLocalStorage();
@@ -331,7 +365,6 @@ function updateShoppingListInfo() {
   const shoppingListInfo = document.querySelector('.shopping-list-info');
   shoppingListInfo.textContent = `Shopping List (${bookList.length} books)`;
 }
-
 
 // Закриття модального вікна при натисканні на кнопку закриття
 const closeButton = document.querySelector('.close-mob');
