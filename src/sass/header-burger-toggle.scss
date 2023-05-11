@@ -189,6 +189,9 @@ input[type='checkbox']:checked ~ .check::after {
   background-position: bottom;
   background-repeat: no-repeat;
   padding: 0;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -196,6 +199,7 @@ input[type='checkbox']:checked ~ .check::after {
   (min-resolution: 2dppx) {
   .burger-container {
     background-image: url(../images/background-colors_x2.png);
+    background-size: contain;
   }
 }
 
