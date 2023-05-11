@@ -1,3 +1,6 @@
+import '../authorization/firebase';
+import '../authorization/sign-in-sign-up';
+
 window.addEventListener('load', loadBookSL);
 
 const KEY_SL = 'bookList';
@@ -217,3 +220,14 @@ function deliteBookId() {
     });
   }
 }
+
+// const buttonClickUser = document.querySelector('.user-bar-item');
+// loginedUserButton.addEventListener('click', userBarButtonClick);
+// function userBarButtonClick() {
+//   buttonClickUser.classList.toggle('is-active');
+// }
+
+// function logOutButtonClick() {
+//   buttonClickUser.classList.remove('is-active');
+//   location.href = './';
+// }
