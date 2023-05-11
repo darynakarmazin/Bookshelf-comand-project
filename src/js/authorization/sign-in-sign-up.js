@@ -31,10 +31,35 @@ const burgerNavigation = document.querySelector('.navigation-burger');
 const userName = document.querySelector('.user-bar-button-text');
 const userNameMobile = document.querySelector('.js-user-mobile-name');
 const loginedUserButton = document.querySelector('.js-user-bar-button');
+const dropdownLogOut = document.querySelector('.js-log-out-button');
+const buttonClickUser = document.querySelector('.user-bar-item');
 
-loginedUserButton.addEventListener('click', function () {
-  userBar.classList.add('is-active');
-});
+// loginedUserButton.addEventListener('click', function () {
+//   userBar.classList.add('is-active');
+// });
+loginedUserButton.addEventListener('click', userBarButtonClick);
+dropdownLogOut.addEventListener('click', logOutButtonClick);
+logOutButton.addEventListener('click', logOutButtonClick);
+
+// const openModalUserButton = document.querySelector('.sign-up-button');
+// const userBar = document.querySelector('.js-user-bar');
+const buttonShoppingList = document.querySelector('.site-nav__link');
+buttonShoppingList.addEventListener('click', signInUserBasket);
+
+function signInUserBasket() {
+  openModalUserButton.classList.add('display-none');
+  userBar.classList.remove('visually-hidden');
+}
+
+
+function userBarButtonClick() {
+  buttonClickUser.classList.toggle('is-active');
+}
+
+function logOutButtonClick() {
+  buttonClickUser.classList.remove('is-active');
+  location.href = './';
+}
 
 signUpForm.addEventListener('submit', registretedUser);
 signInForm.addEventListener('submit', signInUser);
