@@ -90,7 +90,7 @@ function renderListScrol(array, limit, inc) {
                 srcset="${img} 1x, ${img2} 2x"
                 src="${img}"
                 alt="${title}"
-                height="32"
+                
             /></a>
             </div>
   `;
