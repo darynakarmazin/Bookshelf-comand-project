@@ -32,9 +32,11 @@ let parsedData = JSON.parse(loadData);
 // })();
 // ----------------------------
 function loadBookSL() {
-  loadData != null
-    ? markupBookContent(parsedData)
-    : (ulMarkupSL.innerHTML = markupBookZoro);
+  if (parsedData && parsedData.length > 0) {
+    markupBookContent(parsedData);
+  } else {
+    ulMarkupSL.innerHTML = markupBookZoro;
+  }
 }
 
 const markupBookZoro = `<li><p class="shoppingList-text">
