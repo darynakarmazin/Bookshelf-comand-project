@@ -30,7 +30,7 @@ window.onload = function () {
         .then(response => response.json())
         .then(data => {
           const book = data;
-          console.log(book);
+          // console.log(book);
           if (book) {
             renderStats(book);
             updateButton(
@@ -72,7 +72,7 @@ window.onload = function () {
         .then(response => response.json())
         .then(data => {
           const book = data;
-          console.log(book);
+          // console.log(book);
           if (book) {
             renderStats(book);
             updateButton(
@@ -207,7 +207,7 @@ function handleButtonClick(
       bookImageUrl,
       bookPublisher
     );
-    
+
     button.textContent = 'Remove from Shopping List';
   }
 
@@ -234,11 +234,10 @@ function addToLocalStorage(
     author: bookAuthor,
     description: bookDescription,
     image: bookImage,
-    publisher: bookPublisher
+    publisher: bookPublisher,
   });
   localStorage.setItem('bookList', JSON.stringify(bookList));
 }
-
 
 function removeFromLocalStorage(bookId) {
   const bookList = getBookListFromLocalStorage();
