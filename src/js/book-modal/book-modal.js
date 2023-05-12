@@ -113,7 +113,7 @@ function renderStats(book) {
           >
             <img
               src="${imgchop1}"
-              class="shop-shoppingList-img"
+              class="shop-shoppingList-img1"
               alt="amazon"
               />
           </a>
