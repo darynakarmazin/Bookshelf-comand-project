@@ -239,6 +239,7 @@ input[type='checkbox']:checked ~ .check::after {
   min-width: 184px;
   padding: 13px 14px;
   margin-top: 20px;
+  margin-left: 20px;
 
   background: #4f2ee8;
   border: 1.5px solid #111111;
@@ -252,16 +253,22 @@ input[type='checkbox']:checked ~ .check::after {
   margin-top: 126px;
 }
 
+.navigation-burger-shopping-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 183px;
+}
+
 .log-out-button {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 24px;
- margin-top: 447px;
+  margin-top: 447px;
   position: relative;
   top: -20px;
   z-index: 1;
-margin-left: 20px;
+  margin-left: 20px;
   background-color: #ffffff;
   border: 1.5px solid #111111;
   border-radius: 18px;
@@ -418,7 +425,7 @@ margin-left: 20px;
   width: 100%;
 }
 
-.js-log-out-button{
+.js-log-out-button {
   margin-top: 50px;
   margin-left: 33px;
 }
