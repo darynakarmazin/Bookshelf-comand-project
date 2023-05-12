@@ -38,7 +38,8 @@ window.onload = function () {
               book.title,
               book.author,
               book.description,
-              book.book_image
+              book.book_image,
+              book.publisher
             );
           } else {
             console.error('The book object is empty.');
@@ -79,7 +80,8 @@ window.onload = function () {
               book.title,
               book.author,
               book.description,
-              book.book_image
+              book.book_image,
+              book.publisher
             );
           } else {
             console.error('The book object is empty.');
@@ -133,7 +135,7 @@ function renderStats(book) {
           <a
               class="shop-shoppingList-link"
               target="_blank"
-              href="${book.buy_links[2].url}"
+              href="https://bookshop.org/books?affiliate=3546&keywords=THE+LOVE+STORIES+OF+THE+BIBLE+SPEAK"
               >
               <img
               class="shop-shoppingList-img2"
@@ -156,7 +158,8 @@ function updateButton(
   bookTitle,
   bookAuthor,
   bookDescription,
-  bookImageUrl
+  bookImageUrl,
+  bookPublisher
 ) {
   const button = document.querySelector('.add-to-list-button');
   const bookList = getBookListFromLocalStorage();
@@ -174,7 +177,8 @@ function updateButton(
       bookTitle,
       bookAuthor,
       bookDescription,
-      bookImageUrl
+      bookImageUrl,
+      bookPublisher
     );
   });
 }
@@ -184,7 +188,8 @@ function handleButtonClick(
   bookTitle,
   bookAuthor,
   bookDescription,
-  bookImageUrl
+  bookImageUrl,
+  bookPublisher
 ) {
   const button = document.querySelector('.add-to-list-button');
   const bookList = getBookListFromLocalStorage();
@@ -199,8 +204,10 @@ function handleButtonClick(
       bookTitle,
       bookAuthor,
       bookDescription,
-      bookImageUrl
+      bookImageUrl,
+      bookPublisher
     );
+    
     button.textContent = 'Remove from Shopping List';
   }
 
@@ -218,7 +225,7 @@ function addToLocalStorage(
   bookAuthor,
   bookDescription,
   bookImage,
-  bookImageURL
+  bookPublisher
 ) {
   const bookList = getBookListFromLocalStorage();
   bookList.push({
@@ -227,10 +234,11 @@ function addToLocalStorage(
     author: bookAuthor,
     description: bookDescription,
     image: bookImage,
-    imageURL: bookImageURL,
+    publisher: bookPublisher
   });
   localStorage.setItem('bookList', JSON.stringify(bookList));
 }
+
 
 function removeFromLocalStorage(bookId) {
   const bookList = getBookListFromLocalStorage();
@@ -241,7 +249,7 @@ function removeFromLocalStorage(bookId) {
 function updateShoppingListInfo() {
   const bookList = getBookListFromLocalStorage();
   const shoppingListInfo = document.querySelector('.shopping-list-info');
-  shoppingListInfo.textContent = `Shopping List (${bookList.length} books)`;
+  // shoppingListInfo.textContent = `Shopping List (${bookList.length} books)`;
 }
 
 // Закриття модального вікна при натисканні на кнопку закриття
