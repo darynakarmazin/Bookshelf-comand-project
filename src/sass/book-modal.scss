@@ -1,7 +1,13 @@
 .hr-mob {
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
   fill: var(--black-color);
+  position: absolute;
+  top: 16px;
+  right: 80px;
+}
+.hr-mob:hover, .hr-mob:focus{
+  fill: #4f2ee8;
 }
 
 .close-mob {
@@ -11,26 +17,32 @@
   background-color: transparent;
 }
 
+
 .add-to-list-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  margin: 25px;
   margin-top: 56px;
   border: 2px solid #4f2ee8;
   background-color: transparent;
-  border-radius: 20px;
+  border-radius: 40px;
   padding-top: 10px;
-  padding: 14px 28px;
+  padding: 14px 23px;
   font-weight: 700;
   font-size: 18px;
-  line-height: 1.33px;
+  line-height: 1.33;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--black-color);
 
   // position: absolute;
   // bottom: 0;
+}
+
+.add-to-list-button:hover, .add-to-list-button:focus {
+  color: #ffffff;
+  background-color: #4F2EE8;
 }
 
 .close-button {
@@ -170,7 +182,7 @@
     width: 192px;
     height: 281px;
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 40px;
   }
   .book-title {
@@ -182,12 +194,11 @@
     font-size: 14px;
   }
   .add-to-list-button {
-    padding: 20 120px;
+    padding: 12px 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0;
-    margin-top: 200px;
+    margin-top: 180px;
   }
   .book-description {
   }
@@ -211,6 +222,18 @@
   .close-button {
     top: -230px;
     left: 370px;
+  }
+
+  .hr-mob {
+    width: 18px;
+    height: 18px;
+    fill: var(--black-color);
+    position: absolute;
+    top: 20px;
+    right: 95px;
+  }
+  .hr-mob:hover, .hr-mob:focus{
+    fill: #4f2ee8;
   }
 }
 
