@@ -11,7 +11,11 @@ const titleBooksList = document.querySelector('.books-list-title');
 const navList = document.querySelector('.categories-list');
 const listEmpty = document.querySelector('.books-list-empty');
 
-onRenderFiltred();
+const title = document.querySelector('title');
+if (title.text == 'Bookshelf') {
+  onRenderFiltred();
+  navList.addEventListener('click', onFiltred);
+}
 
 function onRenderFiltred() {
   fetchCategories().then(filtersMarkup).catch();
@@ -28,8 +32,6 @@ function filtersMarkup(filtersData) {
       <li data-filter="Best Sellers Books" class="categories-list-name active">All categories</li>
       ${filtersMarkup}`;
 }
-
-navList.addEventListener('click', onFiltred);
 
 export function onFiltred(event) {
   event.preventDefault();
