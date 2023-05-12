@@ -273,6 +273,7 @@ function renderStats(book) {
                       <li>
                         <a
                           class="shop-shoppingList-link"
+                          target="_blank"
                           href="${book.buy_links[0].url}"
                         >
                           <img
@@ -285,6 +286,7 @@ function renderStats(book) {
                       <li>
                         <a
                           class="shop-shoppingList-link"
+                          target="_blank"
                           href="${book.buy_links[1].url}"
                         >                          
                           <img
@@ -297,6 +299,7 @@ function renderStats(book) {
                       <li>
                         <a
                           class="shop-shoppingList-link"
+                          target="_blank"
                           href="${book.buy_links[2].url}"
                         >
                           <img
@@ -430,7 +433,6 @@ function closeModal() {
   modal.classList.remove('modal-active');
 }
 
-
 // <ul class="svg-list">
 //         ${book.buy_links.slice(0,3).map(link => `
 //         <li>
@@ -441,8 +443,8 @@ function closeModal() {
 //           .join('')}
 //       </ul>
 
-
-{/* <ul class="box-shoppingList-shop">
+{
+  /* <ul class="box-shoppingList-shop">
                       <li>
                         <a
                           class="shop-shoppingList-link"
@@ -479,4 +481,5 @@ function closeModal() {
                             />       
                         </a>
                       </li>
-                    </ul> */}
+                    </ul> */
+}

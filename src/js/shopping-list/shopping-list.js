@@ -9,74 +9,7 @@ let imgchop3 = new URL('/src/images/shop3.png', import.meta.url);
 let imgIcon = new URL('/src/images/trash-03.png', import.meta.url);
 
 const ulMarkupSL = document.querySelector('.books-shoppingList');
-// const parsedData = [
-//   {
-//     _id: '1',
-//     book_image: '1',
-//     title: 'Назва1',
-//     publisher: 'група',
-//     description: 'опис',
-//     author: 'автор',
-//   },
-//   {
-//     _id: '2',
-//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
-//     title: 'Назва2',
-//     publisher: 'група',
-//     description: 'опис',
-//     author: 'автор',
-//   },
-//   {
-//     _id: '3',
-//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
-//     title: 'Назва3',
-//     publisher: 'група',
-//     description: 'опис',
-//     author: 'автор',
-//   },
-//   {
-//     _id: '4',
-//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
-//     title: 'Назва4',
-//     publisher: 'група',
-//     description: 'опис',
-//     author: 'автор',
-//   },
-//   {
-//     _id: '5',
-//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
-//     title: 'Назва5',
-//     publisher: 'група',
-//     description: 'опис',
-//     author: 'автор',
-//   },
-//   {
-//     _id: '6',
-//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
-//     title: 'Назва6',
-//     publisher: 'група',
-//     description: 'опис',
-//     author: 'автор',
-//   },
-//   {
-//     _id: '7',
-//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
-//     title: 'Назва7',
-//     publisher: 'група',
-//     description: 'опис',
-//     author: 'автор',
-//   },
-//   {
-//     _id: '8',
-//     book_image: new URL('/src/images/empty-page.png', import.meta.url),
-//     title: 'Назва8',
-//     publisher: 'група',
-//     description: 'опис',
-//     author: 'автор',
-//   },
-// ];
-// localStorage.setItem('parsedData', JSON.stringify(parsedData));
-// --------------------
+
 let loadData = localStorage.getItem(KEY_SL);
 let parsedData = JSON.parse(loadData);
 
@@ -133,7 +66,7 @@ function markupBookContent(parsedData) {
                       <h2 class="text-shoppingList-title">${parsedData.title}</h2>
                       <p class="text-shoppingList-category">${parsedData.publisher}</p>
                     </div>
-                    <button class="box-shoppingList-trash" id="${parsedData._id}">
+                    <button class="box-shoppingList-trash" id="${parsedData.id}">
                        <img
                             class="box-shoppingList-trash-icon"
                             src="${imgIcon}"
@@ -152,12 +85,13 @@ function markupBookContent(parsedData) {
                       <li>
                         <a
                           class="shop-shoppingList-link"
+                          target="_blank"
                           href="https://www.amazon.com"
                         >
                            <img
                             class="shop-shoppingList-img1"
                             src="${imgchop1}"
-                            alt="amazon"
+                            alt=""
 
                             />       
                         </a>
@@ -165,12 +99,13 @@ function markupBookContent(parsedData) {
                       <li>
                         <a
                           class="shop-shoppingList-link"
+                          target="_blank"
                           href="https://goto.applebooks.apple"
                         >                          
                           <img
                             class="shop-shoppingList-img2"
                             src="${imgchop2}"
-                            alt="amazon"
+                            alt=""
 
                           />           
                         </a>
@@ -178,12 +113,13 @@ function markupBookContent(parsedData) {
                       <li>
                         <a
                           class="shop-shoppingList-link"
+                          target="_blank"
                           href="https://du-gae-books-dot-nyt-du-prd.appspot.com"
                         >
                            <img
                             class="shop-shoppingList-img2"
                             src="${imgchop3}"
-                            alt="amazon"
+                            alt=""
 
                             />       
                         </a>
@@ -208,7 +144,7 @@ function deliteBookId() {
   for (i = 0; i < dots.length; i++) {
     dots[i].addEventListener('click', e => {
       keyId = e.target.parentElement.attributes.id.value;
-      let filtered = parsedData.filter(o => o._id !== keyId);
+      let filtered = parsedData.filter(o => o.id !== keyId);
 
       localStorage.setItem(KEY_SL, JSON.stringify(filtered));
       loadData = localStorage.getItem(KEY_SL);
