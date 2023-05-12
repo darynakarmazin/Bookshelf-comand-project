@@ -147,101 +147,101 @@ function renderStats(book) {
     <button class="add-to-list-button">Add to Shopping List</button>
 
 `;
-const modalContent = document.querySelector('.modal-content');
-modalContent.innerHTML = content;
+  const modalContent = document.querySelector('.modal-content');
+  modalContent.innerHTML = content;
 }
 
 function updateButton(
-bookId,
-bookTitle,
-bookAuthor,
-bookDescription,
-bookImageUrl
+  bookId,
+  bookTitle,
+  bookAuthor,
+  bookDescription,
+  bookImageUrl
 ) {
-const button = document.querySelector('.add-to-list-button');
-const bookList = getBookListFromLocalStorage();
-const isBookInList = bookList.some(item => item.id === bookId);
+  const button = document.querySelector('.add-to-list-button');
+  const bookList = getBookListFromLocalStorage();
+  const isBookInList = bookList.some(item => item.id === bookId);
 
-if (isBookInList) {
-button.textContent = 'Remove from Shopping List';
-} else {
-button.textContent = 'Add to Shopping List';
-}
+  if (isBookInList) {
+    button.textContent = 'Remove from Shopping List';
+  } else {
+    button.textContent = 'Add to Shopping List';
+  }
 
-button.addEventListener('click', () => {
-handleButtonClick(
-bookId,
-bookTitle,
-bookAuthor,
-bookDescription,
-bookImageUrl
-);
-});
+  button.addEventListener('click', () => {
+    handleButtonClick(
+      bookId,
+      bookTitle,
+      bookAuthor,
+      bookDescription,
+      bookImageUrl
+    );
+  });
 }
 
 function handleButtonClick(
-bookId,
-bookTitle,
-bookAuthor,
-bookDescription,
-bookImageUrl
+  bookId,
+  bookTitle,
+  bookAuthor,
+  bookDescription,
+  bookImageUrl
 ) {
-const button = document.querySelector('.add-to-list-button');
-const bookList = getBookListFromLocalStorage();
-const isBookInList = bookList.some(item => item.id === bookId);
+  const button = document.querySelector('.add-to-list-button');
+  const bookList = getBookListFromLocalStorage();
+  const isBookInList = bookList.some(item => item.id === bookId);
 
-if (isBookInList) {
-removeFromLocalStorage(bookId);
-button.textContent = 'Add to Shopping List';
-} else {
-addToLocalStorage(
-bookId,
-bookTitle,
-bookAuthor,
-bookDescription,
-bookImageUrl
-);
-button.textContent = 'Remove from Shopping List';
-}
+  if (isBookInList) {
+    removeFromLocalStorage(bookId);
+    button.textContent = 'Add to Shopping List';
+  } else {
+    addToLocalStorage(
+      bookId,
+      bookTitle,
+      bookAuthor,
+      bookDescription,
+      bookImageUrl
+    );
+    button.textContent = 'Remove from Shopping List';
+  }
 
-updateShoppingListInfo();
+  updateShoppingListInfo();
 }
 
 function getBookListFromLocalStorage() {
-const bookList = localStorage.getItem('bookList');
-return bookList ? JSON.parse(bookList) : [];
+  const bookList = localStorage.getItem('bookList');
+  return bookList ? JSON.parse(bookList) : [];
 }
 
 function addToLocalStorage(
-bookId,
-bookTitle,
-bookAuthor,
-bookDescription,
-bookImage,
-bookImageURL
+  bookId,
+  bookTitle,
+  bookAuthor,
+  bookDescription,
+  bookImage,
+  bookImageURL
 ) {
-const bookList = getBookListFromLocalStorage();
-bookList.push({
-id: bookId,
-title: bookTitle,
-author: bookAuthor,
-description: bookDescription,
-image: bookImage,
-imageURL: bookImageURL,
-});
-localStorage.setItem('bookList', JSON.stringify(bookList));
+  const bookList = getBookListFromLocalStorage();
+  bookList.push({
+    id: bookId,
+    title: bookTitle,
+    author: bookAuthor,
+    description: bookDescription,
+    image: bookImage,
+    imageURL: bookImageURL,
+  });
+  localStorage.setItem('bookList', JSON.stringify(bookList));
 }
 
 function removeFromLocalStorage(bookId) {
-const bookList = getBookListFromLocalStorage();
-const updatedList = bookList.filter(item => item.id !== bookId);
-localStorage.setItem('bookList', JSON.stringify(updatedList));
+  const bookList = getBookListFromLocalStorage();
+  const updatedList = bookList.filter(item => item.id !== bookId);
+  localStorage.setItem('bookList', JSON.stringify(updatedList));
 }
 
 function updateShoppingListInfo() {
-const bookList = getBookListFromLocalStorage();
-const shoppingListInfo = document.querySelector('.shopping-list-info');
-shoppingListInfo.textContent = `Shopping List (${bookList.length} books)`;
+  const bookList = getBookListFromLocalStorage();
+  const shoppingListInfo = document.querySelector('.shopping-list-info');
+  shoppingListInfo.textContent = `Shopping List (${bookList.length} books)`;
 }
 
 // Закриття модального вікна при натисканні на кнопку закриття
@@ -264,7 +264,7 @@ document.addEventListener('keydown', event => {
   }
 });
 
-function closeModal() {
-  const modal = document.querySelector('.modal');
-  modal.classList.remove('modal-active');
-}
+// function closeModal() {
+//   const modal = document.querySelector('.modal');
+//   modal.classList.remove('modal-active');
+// }
