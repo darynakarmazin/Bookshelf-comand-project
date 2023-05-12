@@ -72,7 +72,7 @@ window.onload = function () {
         .then(response => response.json())
         .then(data => {
           const book = data;
-          console.log(book);
+          // console.log(book);
           if (book) {
             renderStats(book);
             updateButton(
