@@ -208,6 +208,7 @@
   height: 11px;
   filter: var(--icon-shop-white);
   transition: transform var(--animation), filter var(--animation);
+  filter: grayscale(100%);
 }
 .shop-shoppingList-img2 {
   width: 16px;
