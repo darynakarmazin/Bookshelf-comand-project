@@ -8,7 +8,11 @@ const ulBooksList = document.querySelector('.books-list');
 const divBooksList = document.querySelector('.books-list-title');
 let limit = 1;
 
-onRenderBestsellers();
+const title = document.querySelector('title');
+if (title.text == 'Bookshelf') {
+  onRenderBestsellers();
+}
+
 export function onRenderBestsellers() {
   onLoader();
   fetchTopBooks().then(dataBestsellers).catch();
