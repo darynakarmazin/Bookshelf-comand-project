@@ -1,7 +1,11 @@
 import '../authorization/firebase';
 import '../authorization/sign-in-sign-up';
 
+import { offLoader, onLoader } from '../loader.js';
+onLoader();
 window.addEventListener('load', loadBookSL);
+offLoader();
+
 
 const KEY_SL = 'bookList';
 let imgEmpryBig = new URL('/src/images/empty-page@2.png', import.meta.url);
