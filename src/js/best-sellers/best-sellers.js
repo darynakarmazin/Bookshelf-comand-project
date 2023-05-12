@@ -11,6 +11,14 @@ let limit = 1;
 const title = document.querySelector('title');
 if (title.text == 'Bookshelf') {
   onRenderBestsellers();
+  window.addEventListener(
+    'resize',
+    debounce(() => {
+      if (ulBooksList.textContent == '') {
+        onRenderBestsellers();
+      } else return;
+    }, 250)
+  );
 }
 
 export function onRenderBestsellers() {
@@ -18,14 +26,7 @@ export function onRenderBestsellers() {
   fetchTopBooks().then(dataBestsellers).catch();
 }
 
-window.addEventListener(
-  'resize',
-  debounce(() => {
-    if (ulBooksList.textContent == '') {
-      onRenderBestsellers();
-    } else return;
-  }, 250)
-);
+
 
 function dataBestsellers(data) {
   resizeLimit();
