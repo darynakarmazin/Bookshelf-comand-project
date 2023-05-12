@@ -1,11 +1,7 @@
-import '../authorization/firebase';
-import '../authorization/sign-in-sign-up';
-
 import { offLoader, onLoader } from '../loader.js';
 onLoader();
 window.addEventListener('load', loadBookSL);
 offLoader();
-
 
 const KEY_SL = 'bookList';
 let imgEmpryBig = new URL('/src/images/empty-page@2.png', import.meta.url);
@@ -58,13 +54,11 @@ const markupBookZoro = `<li><p class="shoppingList-text">
 function markupBookContent(parsedData) {
   ulMarkupSL.innerHTML = '';
   const markupBookLi = parsedData
-    .map((parsedData, i) => {
-      i += 1;
-      if (i < parsedData.length + 1) {
-        return `<li class="books-shoppingListLi">
+    .map(parsedData => {
+      return `<li class="books-shoppingListLi">
                 <img
                   class="books-shoppingList-img"
-                  src="${parsedData.book_image}"
+                  src="${parsedData.image}"
                   alt=""
                 />
                 <div class="box-shoppingList-content">
@@ -136,7 +130,6 @@ function markupBookContent(parsedData) {
                 </div>
               </li>
             `;
-      }
     })
     .join('');
   ulMarkupSL.innerHTML = markupBookLi;
