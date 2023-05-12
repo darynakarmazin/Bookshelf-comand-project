@@ -72,7 +72,7 @@ window.onload = function () {
         .then(response => response.json())
         .then(data => {
           const book = data;
-          // console.log(book);
+          console.log(book);
           if (book) {
             renderStats(book);
             updateButton(
@@ -135,7 +135,7 @@ function renderStats(book) {
           <a
               class="shop-shoppingList-link"
               target="_blank"
-              href="https://bookshop.org/books?affiliate=3546&keywords=THE+LOVE+STORIES+OF+THE+BIBLE+SPEAK"
+              href="${book.buy_links[4].url}"
               >
               <img
               class="shop-shoppingList-img2"
