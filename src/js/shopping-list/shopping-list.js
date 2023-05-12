@@ -145,7 +145,7 @@ function deliteBookId() {
 
   for (i = 0; i < dots.length; i++) {
     dots[i].addEventListener('click', e => {
-      keyId = e.target.parentElement.attributes.id.value;
+      let keyId = e.target.parentElement.attributes.id.value;
       let filtered = parsedData.filter(o => o.id !== keyId);
 
       localStorage.setItem(KEY_SL, JSON.stringify(filtered));
