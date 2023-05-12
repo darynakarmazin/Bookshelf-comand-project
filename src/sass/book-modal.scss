@@ -79,16 +79,25 @@
 
 // style in modal
 .book-title {
-  font-weight: 700;
+  font-family: DM Sans;
   font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-align: left;
+
   line-height: 1.16;
   color: var(--black-color);
   margin-top: 14px;
   margin-left: 4px;
 }
 .book-author {
+  font-family: DM Sans;
+  font-size: 12px;
+  font-style: italic;
   font-weight: 400;
-  font-size: 14px;
+  letter-spacing: -0.04em;
+  text-align: left;
+  
   line-height: 1.28;
   color: var(--books-title-color);
   margin-top: 14px;
@@ -97,11 +106,13 @@
 }
 
 .book-description {
-  font-family: inherit;
-  font-size: 14px;
+  font-family: DM Sans;
   font-weight: 400;
-  line-height: 1.28;
   letter-spacing: -0.04em;
+  text-align: left;
+  font-size: 14px;
+
+  line-height: 1.28;
   color: var(--black-color);
   max-width: 280px;
   margin: 0;
@@ -167,8 +178,11 @@
     margin-left: 0;
     font-size: 24px;
   }
+  .book-author{
+    font-size: 14px;
+  }
   .add-to-list-button {
-    padding: 20 155px;
+    padding: 20 120px;
     display: flex;
     justify-content: center;
     align-items: center;
