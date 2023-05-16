@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://l0nerof.github.io/different_but_the_same",
+  "homepage": "https://darynakarmazin.github.io/Bookshelf-comand-project",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /different_but_the_same/"
+    "build": "parcel build src/*.html --public-url /Bookshelf-comand-project/"
   },
   "repository": {
     "type": "git",
