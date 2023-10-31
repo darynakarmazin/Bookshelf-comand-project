@@ -24,13 +24,13 @@ Teclology stack [HTML, CSS, JS, Fetch API]
 Design [https://www.figma.com/file/XhC8FSCfAkraEF5l7Hx4fL/Test?node-id=41%3A14&mode=dev](https://www.figma.com/file/JB3QBTgXBIHU24nMOtmVmK/Bookshelf?node-id=0%3A1&mode=dev)
 
 Main page
-![Main page](https://github.com/darynakarmazin/Bookshelf-comand-project/raw/main/src/img/view.png)
+![Main page](https://github.com/darynakarmazin/Bookshelf-comand-project/raw/main/src/images/view.png)
 
 Main page
-![Catalog page](https://github.com/darynakarmazin/Bookshelf-comand-project/raw/main/src/img/view-2.png)
+![Catalog page](https://github.com/darynakarmazin/Bookshelf-comand-project/raw/main/src/images/view-2.png)
 
 SignUp page
-![Favorutes page](https://github.com/darynakarmazin/Bookshelf-comand-project/raw/main/src/img/view-3.png)
+![Favorutes page](https://github.com/darynakarmazin/Bookshelf-comand-project/raw/main/src/images/view-3.png)
 
 SHOPPING LIST page
-![Favorutes page](https://github.com/darynakarmazin/Bookshelf-comand-project/raw/main/src/img/view-4.png)
+![Favorutes page](https://github.com/darynakarmazin/Bookshelf-comand-project/raw/main/src/images/view-4.png)
